@@ -108,6 +108,8 @@ public class Infodepensead extends JFrame{
         
         jComboBox1.addItem("Annee");
         
+        jComboBox1.addItem("Tous");
+        
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 350, 610, 70);
@@ -327,7 +329,73 @@ public class Infodepensead extends JFrame{
         String datfr2= form2.format(new Date());
         
         String datfr3= form3.format(new Date());
-                
+        
+        
+        //
+        if(jComboBox1.getSelectedItem().equals("Tous")){
+            
+            for(int k=d.getRowCount()-1; k>=0; k--){
+           
+          d.removeRow(k);
+      }
+          
+             
+double fini=0d;
+ 
+   try{
+  Class.forName("com.mysql.jdbc.Driver");
+    
+  String url= "jdbc:mysql://localhost:3306/gestion";
+  
+  String user="root"; 
+  
+  String pass="";
+  
+  Connection c1 =DriverManager.getConnection(url, user, pass);
+  
+  System.out.println("Connection bien etablie");
+  
+  Statement a = c1.createStatement();
+  
+  ResultSet b = a.executeQuery("SELECT * FROM depense ORDER BY Date DESC");
+
+  double mon;
+  int id;
+ 
+  String com;
+  
+  String df;
+ 
+
+  while(b.next()){
+
+      id = b.getInt("Identifiant");
+     mon=b.getDouble("Montant");
+     
+     com=b.getString("Commentaire");
+     
+     df=b.getString("Date");
+     
+     fini=fini+mon;
+     
+     ligne(id, mon, com, df);
+     
+ }
+    String to = "Total:"+fini;
+    
+       ligne1("", to, "", "");
+
+  
+
+}
+catch(Exception ex){
+  ex.printStackTrace();
+}
+
+              
+   }
+        
+        //
                 if(jComboBox1.getSelectedItem().equals("Jour")){
                     
                       for(int k=d.getRowCount()-1; k>=0; k--){

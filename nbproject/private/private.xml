@@ -2,37 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Facturenonpayead.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/StockDisponiblePieces.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Facturepayead.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Resumesec.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infopreadga.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infopreadpi.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/QuantiteVenduPieces.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infopreadau.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/StockDisponiblesAutres.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/GESTOCK.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Bon.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Facturenonpayeesc.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/adminresume.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/pageadmin.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/StockDisponibleGar.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/vente.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infopreesc.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Facturepayesec.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/QuantiteVenduGar.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infodepensesec.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/QuantiteVenduAu.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestockDB/Annuler.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestockDB/AnnulerBon.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infodepensead.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infoventeau.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infoventeadga.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infobononpayé.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infoventadpi.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Ajoupre.java</file>
-            <file>file:/C:/Users/Papa%20NDIAYE/Desktop/eclipse/eclipse-committers-neon-1a-win32-x86_64/eclipse/Pro%20TGP/src/gestock1/Infobonpayé.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

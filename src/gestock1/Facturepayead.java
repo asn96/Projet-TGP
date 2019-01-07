@@ -101,6 +101,8 @@ public class Facturepayead extends JFrame{
         
         jComboBox1.addItem("Annee");
         
+        jComboBox1.addItem("Tous");
+        
         jButton1.addActionListener(new Quitter());
         
         jButton2.addActionListener(new Imprimer());
@@ -328,6 +330,75 @@ public class Facturepayead extends JFrame{
         String datfr2= form2.format(new Date());
         
         String datfr3= form3.format(new Date());
+        
+        //
+          if(jComboBox1.getSelectedItem().equals("Tous")){
+                    
+                      for(int k=d.getRowCount()-1; k>=0; k--){
+                     
+                    d.removeRow(k);
+                }
+                    
+                       
+        double fini=0d;
+           
+             try{
+            Class.forName("com.mysql.jdbc.Driver");
+              
+            String url= "jdbc:mysql://localhost:3306/gestion";
+            
+            String user="root"; 
+            
+            String pass="";
+            
+            Connection c1 =DriverManager.getConnection(url, user, pass);
+            
+            System.out.println("Connection bien etablie");
+            
+            Statement a = c1.createStatement();
+            
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE Etat='"+1+"' ORDER BY Date DESC");
+          
+            int refp;
+            
+            double mon;
+            
+            String nomp;
+            
+            String prenomp, dt;
+           
+       
+            while(b.next()){
+                
+               refp=b.getInt("Identifiant");
+          
+               mon=b.getDouble("Montant");
+               
+               nomp = b.getString("Nom");
+               
+               dt = b.getString("Date");
+               prenomp = b.getString("Prenom");
+               
+               fini=fini+mon;
+          
+               ligne(refp, mon, dt, nomp, prenomp);
+               
+      }
+                 ligne1("Total", fini, "");
+                 
+                 fini=0d;
+        
+            
+         
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+                        
+             }
+        
+        //
                 
                 if(jComboBox1.getSelectedItem().equals("Jour")){
                     
