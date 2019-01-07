@@ -337,7 +337,7 @@ public class QuantiteVenduGar extends JFrame{
     
             	//
             	
-                if(jComboBox1.getSelectedItem().equals("le Mois")){
+                if(jComboBox1.getSelectedItem().equals("Tous")){
                     
                     int limit=d.getRowCount();
                     for (int i = limit-1; i >=0; --i) {
@@ -552,7 +552,7 @@ public class QuantiteVenduGar extends JFrame{
           fi=b.getString("Date");
           
          
-          ligne(h, g, k, p ,"le mois");
+          ligne(h, g, k, p , fi);
                 
                 
                

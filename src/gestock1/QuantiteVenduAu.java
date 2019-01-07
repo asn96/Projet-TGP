@@ -104,6 +104,7 @@ public class QuantiteVenduAu extends JFrame{
         //jComboBox1.addItem("la Semaine");
         jComboBox1.addItem("le Mois");
         jComboBox1.addItem("l'Annee");
+        jComboBox1.addItem("Tous");
         
         jPanel5.add(jComboBox1);
         jComboBox1.setBounds(180, 200, 140, 22);
@@ -335,6 +336,10 @@ public class QuantiteVenduAu extends JFrame{
 
             public void actionPerformed(ActionEvent e){
                 
+                
+                //
+                
+                
                 if(jComboBox1.getSelectedItem().equals("le Jour")){
                      SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
         
@@ -362,6 +367,79 @@ public class QuantiteVenduAu extends JFrame{
             Statement a = c1.createStatement();
             
             ResultSet b = a.executeQuery("SELECT bonneref,coderef, Designation,  Quantite,  Date, SUM(Quantite)  FROM venteau WHERE Date='"+dat+"' GROUP BY bonneref ");
+          
+            int h;
+           
+           int g; 
+           
+           String k;
+           
+           String p;
+           
+           String fi;
+           
+        
+            
+       
+            
+            while(b.next()){
+                    
+          h=b.getInt("bonneref");
+          
+          g=b.getInt("coderef");
+          
+          k=b.getString("Designation");
+          
+          p=b.getString("SUM(Quantite)");
+          
+          fi=b.getString("Date");
+          
+         
+          ligne(h, g, k, p ,fi);
+                
+                
+               
+    
+            
+      }
+        
+            
+         
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+                                     
+     }
+                
+                //
+                if(jComboBox1.getSelectedItem().equals("Tous")){
+                     SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+        
+                     String dat= form.format(new Date());
+        
+                
+                  int limit=d.getRowCount();
+                      for (int i = limit-1; i >=0; --i) {
+                   d.removeRow(i);
+                  }
+                      
+                         try{
+            Class.forName("com.mysql.jdbc.Driver");
+              
+            String url= "jdbc:mysql://localhost:3306/gestion";
+            
+            String user="root"; 
+            
+            String pass="";
+            
+            Connection c1 =DriverManager.getConnection(url, user, pass);
+            
+            System.out.println("Connection bien etablie");
+            
+            Statement a = c1.createStatement();
+            
+            ResultSet b = a.executeQuery("SELECT bonneref,coderef, Designation,  Quantite,  Date, SUM(Quantite)  FROM venteau GROUP BY bonneref ");
           
             int h;
            

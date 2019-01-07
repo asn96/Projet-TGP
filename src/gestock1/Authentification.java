@@ -201,7 +201,7 @@ public class Authentification extends JFrame implements Runnable{
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Derniere mise a jour 03 Juillet 2018");
+        jLabel8.setText("Derniere mise a jour 07 Janvier 2019");
         jPanel3.add(jLabel8);
         jLabel8.setBounds(20, 10, 230, 16);
 
