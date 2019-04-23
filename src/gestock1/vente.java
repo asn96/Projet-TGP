@@ -875,6 +875,7 @@ public class vente extends JFrame{
            } catch (ClassNotFoundException ex) {
                
            }
+                      
                 
                 String url= "jdbc:mysql://localhost:3306/gestion";
             
@@ -888,7 +889,7 @@ public class vente extends JFrame{
                
                 Statement a = c1.createStatement();
                
-                a.executeUpdate("INSERT INTO facture(Montant, Date, Etat, Nom, Prenom) VALUES('"+tout+"', '"+dat2+"', '"+1+"', '"+fa.getText()+"', '"+fe.getText()+"')");
+                a.executeUpdate("INSERT INTO facture(Montant, Date, Etat, Nom, Prenom, datePayer) VALUES('"+tout+"', '"+dat2+"', '"+1+"', '"+fa.getText()+"', '"+fe.getText()+"', '"+dat2+"')");
             
                
                

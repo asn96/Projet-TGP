@@ -239,8 +239,9 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
            
            int p;
            
+           double prixUnit;
         
-            
+            double soldePiece = 0d;
        
             
             while(b.next()){
@@ -253,15 +254,14 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
           
           p=b.getInt("Quantite");
           
-         
-          ligne(h, g, k, p);
-                
-                
-               
-    
+          prixUnit = b.getDouble("prixUnit");
+          
+          soldePiece += p*prixUnit;
+          ligne(h, g, k, p, prixUnit);
             
       }
-        
+        ligne3("", "", "", "", "Solde: "+soldePiece);
+            soldePiece = 0d;
             
          
         }
@@ -305,15 +305,22 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
         d.addColumn("Reference Code");
         d.addColumn("Designation");
         d.addColumn("Quantite");
+        d.addColumn("Prix Unitaire");
       
         
     }
-         public void ligne(int e , int f , String g , int k){
+         public void ligne(int e , int f , String g , int k, double p){
         
-         Object[] line ={e, f, g, k};
+         Object[] line ={e, f, g, k, p};
         
          d.addRow(line);
     }
+         public void ligne3(String lm, String ln, String ll, String m, String n ){
+        
+                  Object[] line ={lm, ln, ll, m, n};
+                  
+                  d.addRow(line);
+  }
 
     @Override
     public void run() {
@@ -475,6 +482,7 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
                    d.removeRow(i);
                 }
                 
+                double soldePiece = 0d;
                               try{
             Class.forName("com.mysql.jdbc.Driver");
               
@@ -500,6 +508,7 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
             
             int i4;
            
+            double i5;
             while(b.next()){
                     
           i1=b.getInt("bonneref");
@@ -510,16 +519,14 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
           
           i4=b.getInt("Quantite");
           
+          i5 = b.getDouble("prixUnit");
            
-          ligne(i1, i2, i3, i4);
+          soldePiece += i4*i5;
+          ligne(i1, i2, i3, i4, i5);
                 
-                
-               
-       
-            
       }
-        
-            
+        ligne3("", "", "", "", "Solde: "+soldePiece);
+            soldePiece = 0d;
          
         }
         catch(Exception ex){
@@ -564,6 +571,9 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
                 
                 Object ob2 = d.getValueAt(n, 2);
                 
+                Object ob3 = d.getValueAt(n, 4);
+                
+                
                       try{
                 
             Class.forName("com.mysql.jdbc.Driver");
@@ -586,7 +596,7 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
          
             b.updateObject("Quantite", ob1);
             b.updateObject("Designation", ob2);
-            
+            b.updateObject("prixUnit", ob3);
             b.updateRow();
             
             JOptionPane.showMessageDialog(null, "Modification effcetuée", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);

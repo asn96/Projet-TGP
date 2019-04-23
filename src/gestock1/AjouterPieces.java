@@ -35,6 +35,7 @@ public class AjouterPieces extends JFrame{
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelpu;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -46,6 +47,7 @@ public class AjouterPieces extends JFrame{
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     
     public AjouterPieces(){
     initComponents();
@@ -63,10 +65,12 @@ public class AjouterPieces extends JFrame{
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabelpu = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
     
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -117,37 +121,48 @@ public class AjouterPieces extends JFrame{
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Bonne Reference");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(80, 80, 120, 16);
+        jLabel4.setBounds(80, 50, 120, 16);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Reference code");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(90, 130, 110, 16);
+        jLabel5.setBounds(90, 100, 110, 16);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Designation");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(120, 180, 80, 16);
+        jLabel6.setBounds(120, 150, 80, 16);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Quantite");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(140, 230, 60, 16);
+        jLabel7.setBounds(140, 200, 60, 16);
+        
+        jLabelpu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabelpu.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelpu.setText("Prix Unitaire");
+        jPanel2.add(jLabelpu);
+        jLabelpu.setBounds(120, 250, 80, 16);
+        
+        
         jPanel2.add(jTextField1);
-        jTextField1.setBounds(220, 80, 150, 22);
+        jTextField1.setBounds(220, 50, 150, 22);
 
         jPanel2.add(jTextField2);
-        jTextField2.setBounds(220, 130, 150, 22);
+        jTextField2.setBounds(220, 100, 150, 22);
 
    
         jPanel2.add(jTextField3);
-        jTextField3.setBounds(220, 180, 150, 22);
+        jTextField3.setBounds(220, 150, 150, 22);
         jPanel2.add(jTextField4);
-        jTextField4.setBounds(220, 230, 150, 22);
+        jTextField4.setBounds(220, 200, 150, 22);
 
+        jPanel2.add(jTextField5);
+        jTextField5.setBounds(220, 250, 150, 22);
+        
         jPanel1.add(jPanel2);
         jPanel2.setBounds(90, 150, 520, 300);
         
@@ -157,7 +172,7 @@ public class AjouterPieces extends JFrame{
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Derniere mise a jour 24 avril 2018");
+        jLabel8.setText("Derniere mise a jour 01 Mai 2019");
         jPanel3.add(jLabel8);
         jLabel8.setBounds(20, 10, 230, 16);
 
@@ -345,7 +360,7 @@ public class AjouterPieces extends JFrame{
                
                 System.out.println("Connection etablie");
                
-                PreparedStatement a = c1.prepareStatement("INSERT INTO Pieces VALUES(?, ?, ?, ?)");
+                PreparedStatement a = c1.prepareStatement("INSERT INTO Pieces VALUES(?, ?, ?, ?, ?)");
                 
 
                 a.setString(1, jTextField1.getText());
@@ -355,7 +370,8 @@ public class AjouterPieces extends JFrame{
                 a.setString(3, jTextField3.getText());
                 
                 a.setString(4, jTextField4.getText());
-
+                
+                a.setString(5, jTextField5.getText());
                 a.executeUpdate();
 
             
@@ -365,6 +381,7 @@ public class AjouterPieces extends JFrame{
                jTextField2.setText("");
                jTextField3.setText("");
                jTextField4.setText("");
+               jTextField5.setText("");
          
             } catch (SQLException ex) {
           ex.printStackTrace();
@@ -417,6 +434,7 @@ public class AjouterPieces extends JFrame{
                jTextField2.setText("");
                jTextField3.setText("");
                jTextField4.setText("");
+               jTextField5.setText("");
          
 
          
