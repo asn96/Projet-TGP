@@ -137,7 +137,7 @@ public class Infobonpayé extends JFrame{
             
             Statement a = c1.createStatement();
             
-            ResultSet b = a.executeQuery("SELECT * FROM bon WHERE Etat='"+1+"' ORDER BY Date DESC");
+            ResultSet b = a.executeQuery("SELECT * FROM bon WHERE Etat='"+1+"' ORDER BY datePayer DESC");
           
            int bonn;
            
@@ -151,7 +151,7 @@ public class Infobonpayé extends JFrame{
            
            double mont;
            
-           String datet;
+           String datet, datePayer;
            
            
        
@@ -172,7 +172,9 @@ public class Infobonpayé extends JFrame{
                 
                 datet = b.getString("Date");
                 
-                 ligne(bonn, nom, vi, reg, numa, mont, datet);
+                datePayer = b.getString("datePayer");
+                
+                 ligne(bonn, nom, vi, reg, numa, mont, datet, datePayer);
              }
         
             
@@ -219,21 +221,22 @@ public class Infobonpayé extends JFrame{
         d=(DefaultTableModel) jTable1.getModel();
         
         
-        d.addColumn("Identifiant");
-        d.addColumn("Nom");
+        d.addColumn("Identifiant Bon");
+        d.addColumn("Entreprise");
         d.addColumn("Ville");
         d.addColumn("Region");
         d.addColumn("Numero auto");
         d.addColumn("Montant");
-        d.addColumn("Date");
+        d.addColumn("Date Pret");
+        d.addColumn("Date Paiement");
 
         
    
 
     }
-     public void ligne(int a, String b, String c, String e, String f, double g, String i  ){
+     public void ligne(int a, String b, String c, String e, String f, double g, String i, String datePayer ){
         
-                  Object[] line ={a, b, c, e, f, g, i};
+                  Object[] line ={a, b, c, e, f, g, i, datePayer};
                   
                   d.addRow(line);
      }
@@ -255,7 +258,7 @@ public class Infobonpayé extends JFrame{
        
             public void actionPerformed(ActionEvent e){
                 
-                MessageFormat hed = new MessageFormat("Liste des produits vendus");
+                MessageFormat hed = new MessageFormat("Liste des Bons Payés");
                 
                  MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
                 try{

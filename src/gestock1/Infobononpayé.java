@@ -228,13 +228,13 @@ public class Infobononpayé extends JFrame{
         d=(DefaultTableModel) jTable1.getModel();
         
         
-        d.addColumn("Identifiant");
-        d.addColumn("Nom");
+        d.addColumn("Identifiant Bon");
+        d.addColumn("Entreprise");
         d.addColumn("Ville");
         d.addColumn("Region");
         d.addColumn("Numero auto");
         d.addColumn("Montant");
-        d.addColumn("Date");
+        d.addColumn("Date Pret");
 
         
    
@@ -264,7 +264,7 @@ public class Infobononpayé extends JFrame{
        
             public void actionPerformed(ActionEvent e){
                 
-                MessageFormat hed = new MessageFormat("Liste des produits vendus");
+                MessageFormat hed = new MessageFormat("Liste des Bons Non Payés");
                 
                  MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
                 try{
@@ -284,6 +284,10 @@ public class Infobononpayé extends JFrame{
        
             public void actionPerformed(ActionEvent e){
                
+                SimpleDateFormat for1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                 
+                 String dat2 = for1.format(new Date());
+                 
                  int n = jTable1.getSelectedRow();
                  
                  Object ob1 = d.getValueAt(n, 0);
@@ -309,11 +313,13 @@ public class Infobononpayé extends JFrame{
             
             b.updateInt("Etat", 1);
             
+            b.updateString("datePayer", dat2);
+            
             b.updateRow();
             
             d.removeRow(n);
             
-            JOptionPane.showMessageDialog(null, "Payement effectué", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Paiement effectué", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
           
             }catch(Exception oui){
                           
