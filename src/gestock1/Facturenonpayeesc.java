@@ -236,7 +236,7 @@ public class Facturenonpayeesc extends JFrame{
         
         d.addColumn("Reference");
         d.addColumn("Montant");
-        d.addColumn("Date");
+        d.addColumn("Date Pret");
         d.addColumn("Nom");
         d.addColumn("Prenom");
        
@@ -276,7 +276,7 @@ public class Facturenonpayeesc extends JFrame{
        
             public void actionPerformed(ActionEvent e){
                 
-                MessageFormat hed = new MessageFormat("Liste des factures payées");
+                MessageFormat hed = new MessageFormat("Liste des factures non payées");
                 
                  MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
                 try{

@@ -265,7 +265,7 @@ public class Facturenonpayead extends JFrame{
 
 		d.addColumn("Reference");
 		d.addColumn("Montant");
-		d.addColumn("Date");
+		d.addColumn("Date Pret");
 		d.addColumn("Nom");
 		d.addColumn("Prenom");
 
@@ -625,166 +625,164 @@ public class Facturenonpayead extends JFrame{
 	}
 
 	class Payer implements ActionListener {
-
-
-		public void actionPerformed(ActionEvent e){
-
-			SimpleDateFormat for1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-			String dat2 = for1.format(new Date());
-
-			int n = jTable1.getSelectedRow();
-
-			Object ob1 = d.getValueAt(n, 0);
-			String f = "facture";
-
-			try{
-				Class.forName("com.mysql.jdbc.Driver");
-
-				String url= "jdbc:mysql://localhost:3306/gestion";
-
-				String user="root"; 
-
-				String pass="";
-
-				Connection c1 =DriverManager.getConnection(url, user, pass);
-
-				System.out.println("Connection bien etablie");
-
-				Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-				ResultSet b = a.executeQuery("SELECT * FROM facture WHERE Identifiant='"+ob1+"'");
-
-				b.first();
-
-				b.updateInt("Etat", 1);
-
-				b.updateString("datePayer", dat2);
-
-				b.updateRow();
-
-				d.removeRow(n);
-
-
-			}catch(Exception oui){
-
-
-			}
-
-			//
-
-			try{
-				Class.forName("com.mysql.jdbc.Driver");
-
-				String url= "jdbc:mysql://localhost:3306/gestion";
-
-				String user="root"; 
-
-				String pass="";
-
-				Connection c1 =DriverManager.getConnection(url, user, pass);
-
-				System.out.println("Connection bien etablie");
-
-				Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-				ResultSet b = a.executeQuery("SELECT * FROM ventegar WHERE Identifiant='"+ob1+"'");
-
-				b.first();
-
-				b.updateString("Etat", f);
-
-				b.updateString("Date", dat2);
-
-				b.updateRow();
-
-				d.removeRow(n);
-
-
-			}catch(Exception oui){
-
-
-			}
-
-			//
-
-			try{
-				Class.forName("com.mysql.jdbc.Driver");
-
-				String url= "jdbc:mysql://localhost:3306/gestion";
-
-				String user="root"; 
-
-				String pass="";
-
-				Connection c1 =DriverManager.getConnection(url, user, pass);
-
-				System.out.println("Connection bien etablie");
-
-				Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-				ResultSet b = a.executeQuery("SELECT * FROM ventepieces WHERE Identifiant='"+ob1+"'");
-
-				b.first();
-
-				b.updateString("Etat", f);
-
-				b.updateString("Date", dat2);
-
-				b.updateRow();
-
-				d.removeRow(n);
-
-
-			}catch(Exception oui){
-
-
-			}
-
-			//
-
-			try{
-				Class.forName("com.mysql.jdbc.Driver");
-
-				String url= "jdbc:mysql://localhost:3306/gestion";
-
-				String user="root"; 
-
-				String pass="";
-
-				Connection c1 =DriverManager.getConnection(url, user, pass);
-
-				System.out.println("Connection bien etablie");
-
-				Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-				ResultSet b = a.executeQuery("SELECT * FROM venteau WHERE Identifiant='"+ob1+"'");
-
-				b.first();
-
-				b.updateString("Etat", f);
-
-				b.updateString("Date", dat2);
-
-				b.updateRow();
-
-				d.removeRow(n);
-
-
-
-			}catch(Exception oui){
-
-
-			}
-
-			JOptionPane.showMessageDialog(null, "Paiement effectué", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
-			//
-
-
-		}
-
-
-	}
+            
+       
+            public void actionPerformed(ActionEvent e){
+                
+                 SimpleDateFormat for1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                 
+                 String dat2 = for1.format(new Date());
+               
+                 int n = jTable1.getSelectedRow();
+                 
+                 Object ob1 = d.getValueAt(n, 0);
+                 String f = "facture";
+                 
+                      try{
+            Class.forName("com.mysql.jdbc.Driver");
+              
+            String url= "jdbc:mysql://localhost:3306/gestion";
+            
+            String user="root"; 
+            
+            String pass="";
+            
+            Connection c1 =DriverManager.getConnection(url, user, pass);
+            
+            System.out.println("Connection bien etablie");
+            
+            Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            
+            ResultSet b = a.executeQuery("SELECT * FROM facture WHERE Identifiant='"+ob1+"'");
+            
+            b.first();
+            
+            b.updateInt("Etat", 1);
+            
+            b.updateString("Date", dat2);
+            
+            b.updateRow();
+            
+            d.removeRow(n);
+            
+            }catch(Exception oui){
+                          
+                          
+            }
+            
+                      
+                  //
+            
+                try{
+            Class.forName("com.mysql.jdbc.Driver");
+              
+            String url= "jdbc:mysql://localhost:3306/gestion";
+            
+            String user="root"; 
+            
+            String pass="";
+            
+            Connection c1 =DriverManager.getConnection(url, user, pass);
+            
+            System.out.println("Connection bien etablie");
+            
+            Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            
+            ResultSet b = a.executeQuery("SELECT * FROM ventegar WHERE IDr='"+ob1+"'");
+            
+            while(b.next())
+            {
+                 b.updateString("Etat", f);
+            
+                 b.updateString("Date", dat2);
+            
+                 b.updateRow();
+            }
+          
+            d.removeRow(n);
+            }catch(Exception oui){
+                          
+                          
+            }
+                
+            //
+            
+            try{
+            Class.forName("com.mysql.jdbc.Driver");
+              
+            String url= "jdbc:mysql://localhost:3306/gestion";
+            
+            String user="root"; 
+            
+            String pass="";
+            
+            Connection c1 =DriverManager.getConnection(url, user, pass);
+            
+            System.out.println("Connection bien etablie");
+            
+            Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            
+            ResultSet b = a.executeQuery("SELECT * FROM ventepieces WHERE Identifiant='"+ob1+"'");
+            
+            b.first();
+            
+            b.updateString("Etat", f);
+            
+            b.updateString("Date", dat2);
+            
+            b.updateRow();
+            
+            d.removeRow(n);
+            
+          
+            }catch(Exception oui){
+                          
+                          
+            }
+            
+            //
+               
+            try{
+            Class.forName("com.mysql.jdbc.Driver");
+              
+            String url= "jdbc:mysql://localhost:3306/gestion";
+            
+            String user="root"; 
+            
+            String pass="";
+            
+            Connection c1 =DriverManager.getConnection(url, user, pass);
+            
+            System.out.println("Connection bien etablie");
+            
+            Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            
+            ResultSet b = a.executeQuery("SELECT * FROM venteau WHERE Identifiant='"+ob1+"'");
+            
+            b.first();
+            
+            b.updateString("Etat", f);
+            
+            b.updateString("Date", dat2);
+            
+            b.updateRow();
+            
+            d.removeRow(n);
+            
+            
+          
+            }catch(Exception oui){
+                          
+                          
+            }
+            
+            //
+                JOptionPane.showMessageDialog(null, "Paiement effectué", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
+            //
+            }
+    
+    
+    }
 
 
 	class supprimer implements ActionListener {
