@@ -2,6 +2,7 @@ package gestock1;
 
 import gestockDB.Annuler;
 import gestockDB.AnnulerBon;
+import java.awt.Button;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -229,6 +230,8 @@ public class Infobonpayé extends JFrame{
         d.addColumn("Montant");
         d.addColumn("Date Pret");
         d.addColumn("Date Paiement");
+        d.addColumn("Détails");
+        
 
         
    
@@ -236,7 +239,7 @@ public class Infobonpayé extends JFrame{
     }
      public void ligne(int a, String b, String c, String e, String f, double g, String i, String datePayer ){
         
-                  Object[] line ={a, b, c, e, f, g, i, datePayer};
+                  Object[] line ={a, b, c, e, f, g, i, datePayer, new Button("...")};
                   
                   d.addRow(line);
      }

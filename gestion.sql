@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
+-- version 4.1.14
+-- http://www.phpmyadmin.net
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 23 avr. 2019 à 07:59
--- Version du serveur :  5.7.21
--- Version de PHP :  7.2.4
+-- Client :  127.0.0.1
+-- Généré le :  Sam 10 Août 2019 à 17:59
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `gestion`
@@ -28,7 +26,6 @@ SET time_zone = "+00:00";
 -- Structure de la table `autres`
 --
 
-DROP TABLE IF EXISTS `autres`;
 CREATE TABLE IF NOT EXISTS `autres` (
   `bonneref` int(11) NOT NULL,
   `coderef` int(11) NOT NULL,
@@ -38,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `autres` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `autres`
+-- Contenu de la table `autres`
 --
 
 INSERT INTO `autres` (`bonneref`, `coderef`, `Designation`, `Quantite`) VALUES
@@ -56,7 +53,6 @@ INSERT INTO `autres` (`bonneref`, `coderef`, `Designation`, `Quantite`) VALUES
 -- Structure de la table `bon`
 --
 
-DROP TABLE IF EXISTS `bon`;
 CREATE TABLE IF NOT EXISTS `bon` (
   `Identifiant` int(11) NOT NULL,
   `Nom` varchar(50) NOT NULL,
@@ -65,120 +61,121 @@ CREATE TABLE IF NOT EXISTS `bon` (
   `Numero_auto` varchar(50) NOT NULL,
   `Montant` double NOT NULL,
   `Date` datetime NOT NULL,
+  `datePayer` varchar(50) CHARACTER SET greek DEFAULT NULL,
   `Etat` int(11) NOT NULL,
   PRIMARY KEY (`Identifiant`,`Nom`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `bon`
+-- Contenu de la table `bon`
 --
 
-INSERT INTO `bon` (`Identifiant`, `Nom`, `Ville`, `Region`, `Numero_auto`, `Montant`, `Date`, `Etat`) VALUES
-(50, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-07-16 00:00:00', 0),
-(223, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-05 00:00:00', 0),
-(52, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-07-19 00:00:00', 0),
-(491, 'GDF', 'DAKAR', 'DAKAR', 'dk 9342', 20000, '2018-07-25 00:00:00', 1),
-(451, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-09-17 00:00:00', 0),
-(2302, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk 7033 ag', 10000, '2018-07-28 00:00:00', 1),
-(2303, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk 7033ag', 70000, '2018-07-28 00:00:00', 1),
-(74, 'Colobane', 'Dakar', 'Dakar', '77 548 4069', 30000, '2018-07-28 00:00:00', 1),
-(75, 'Colobane', 'Dakar', 'Dakar', '77 5484069', 35000, '2018-07-28 00:00:00', 1),
-(63, 'Colobane', 'Dakar', 'Dakar', '775484069', 6000, '2018-08-01 00:00:00', 0),
-(64, 'Colobane', 'Dakar', 'Dakar', '775484069', 10000, '2018-08-01 00:00:00', 0),
-(66, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-08-02 00:00:00', 0),
-(67, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-08-02 00:00:00', 0),
-(67, 'Colobane', 'Dakar', 'Dakar', '775484069', 30000, '2018-08-03 00:00:00', 1),
-(115, 'Colobane', 'Dakar', 'Dakar', '775484069', 10000, '2018-08-15 00:00:00', 0),
-(3535, 'IBRAHIMA TOURE', 'DAKAR', 'DAKAR', '8572', 20000, '2018-08-17 00:00:00', 1),
-(356, 'GDF', 'DAKAR', 'DAKAR', 'dk 3097', 20000, '2018-08-27 00:00:00', 1),
-(126, 'Colobane', 'Dakar', 'Dakar', '775484069', 30000, '2018-08-28 00:00:00', 0),
-(127, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-08-29 00:00:00', 0),
-(358, 'GDF', 'DAKAR', 'DAKAR', 'th3465', 35000, '2018-09-03 00:00:00', 1),
-(135, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2018-09-03 00:00:00', 0),
-(136, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2018-09-03 00:00:00', 0),
-(137, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-03 00:00:00', 0),
-(138, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-03 00:00:00', 0),
-(360, 'GDF', 'DAKAR', 'DAKAR', 'dk 0679', 40000, '2018-09-10 00:00:00', 1),
-(361, 'GDF', 'DAKAR', 'DAKAR', 'dk3178', 20000, '2018-09-10 00:00:00', 1),
-(3175, 'IBRAHIMA TOURE', 'DAKAR', 'DAKAR', 'dk9054a1', 20000, '2018-09-10 00:00:00', 1),
-(147, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-10 00:00:00', 0),
-(148, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-10 00:00:00', 0),
-(368, 'GDF', 'DAKAR', 'DAKAR', 'dk5245', 20000, '2018-09-18 00:00:00', 1),
-(494, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-19 00:00:00', 1),
-(491, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-09-21 00:00:00', 0),
-(494, 'Colobane', 'Dakar', 'Dakar', '775484069', 20000, '2018-09-22 00:00:00', 1),
-(374, 'GDF', 'DAKAR', 'DAKAR', 'dk1941', 20000, '2018-10-03 00:00:00', 1),
-(411, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', 0),
-(412, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', 0),
-(413, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', 0),
-(414, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', 0),
-(415, 'GDF', 'DAKAR', 'DAKAR', 'th8554', 30000, '2019-02-21 00:00:00', 0),
-(416, 'Mbao', 'Dakar', 'Dakar', '770489878', 120000, '2018-10-09 00:00:00', 0),
-(417, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-10-09 00:00:00', 0),
-(418, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-10-09 00:00:00', 0),
-(351, 'Mbao', 'Dakar', 'Dakar', '770489878', 60000, '2018-10-18 00:00:00', 0),
-(246, 'Mbao', 'Dakar', 'Dakar', '770489878', 130000, '2018-10-19 00:00:00', 0),
-(355, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2018-10-22 00:00:00', 0),
-(365, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-24 00:00:00', 0),
-(366, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-24 00:00:00', 0),
-(367, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-10-24 00:00:00', 0),
-(386, 'GDF', 'DAKAR', 'DAKAR', 'dk 0783', 10000, '2018-10-24 00:00:00', 0),
-(23, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk8189am', 80000, '2018-11-07 00:00:00', 1),
-(388, 'GDF', 'DAKAR', 'DAKAR', 'dk3097', 20000, '2018-11-07 00:00:00', 1),
-(2304, 'MOURIDE', 'DAKAR', 'DAKAR', 'yh4751e', 60000, '2018-11-08 00:00:00', 1),
-(374, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-11-10 00:00:00', 0),
-(14144, 'GDF', 'DAKAR', 'DAKAR', '578', 45645, '2018-11-11 00:00:00', 1),
-(757, 'GDF', 'DAKAR', 'DAKAR', '755', 575, '2018-11-11 00:00:00', 1),
-(54, 'GDF', 'DAKAR', 'DAKAR', '54', 1000, '2018-11-11 00:00:00', 1),
-(375, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-11-12 00:00:00', 0),
-(2305, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk2142', 80000, '2018-11-30 00:00:00', 1),
-(399, 'GDF', 'DAKAR', 'DAKAR', 'dk4306', 20000, '2018-12-08 00:00:00', 1),
-(400, 'GDF', 'DAKAR', 'DAKAR', 'dk8339', 20000, '2018-12-10 00:00:00', 1),
-(201, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-12-11 00:00:00', 0),
-(202, 'Mbao', 'Dakar', 'Dakar', '770489878', 10000, '2018-12-11 00:00:00', 0),
-(203, 'Mbao', 'Dakar', 'Dakar', '770483878', 40000, '2018-12-12 00:00:00', 0),
-(165, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2018-12-25 00:00:00', 0),
-(166, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-12-26 00:00:00', 0),
-(167, 'Mbao', 'Dakar', 'Dakar', '770489878', 12500, '2018-12-26 00:00:00', 0),
-(168, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-12-27 00:00:00', 0),
-(169, 'Mbao', 'Dakar', 'Dakar', '770489878', 120000, '2018-12-28 00:00:00', 0),
-(200, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-02 00:00:00', 0),
-(221, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2019-01-04 00:00:00', 0),
-(51, 'GDF', 'DAKAR', 'DAKAR', 'th6195', 20000, '2019-01-04 00:00:00', 1),
-(224, 'Mbao', 'Dakar', 'Dakar', '770489878', 15000, '2019-01-05 00:00:00', 0),
-(252, 'GDF', 'DAKAR', 'DAKAR', 'dk5245', 20000, '2019-01-07 00:00:00', 1),
-(254, 'GDF', 'DAKAR', 'DAKAR', 'dk7998', 20000, '2019-01-08 00:00:00', 1),
-(255, 'GDF', 'DAKAR', 'DAKAR', 'dk5246', 20000, '2019-01-08 00:00:00', 1),
-(256, 'GDF', 'DAKAR', 'DAKAR', 'dk2874', 20000, '2019-01-09 00:00:00', 1),
-(53, 'Mbao', 'Dakar', 'Dakar', '770489878', 600000, '2019-01-09 00:00:00', 0),
-(56, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2019-01-09 00:00:00', 0),
-(220, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2019-01-21 00:00:00', 0),
-(258, 'GDF', 'DAKAR', 'DAKAR', 'dk8159', 20000, '2019-01-21 00:00:00', 0),
-(353, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-23 00:00:00', 0),
-(233, 'Mbao', 'Dakar', 'Dakar', '770489878', 30000, '2019-01-25 00:00:00', 0),
-(213, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-28 00:00:00', 0),
-(214, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2019-01-28 00:00:00', 0),
-(215, 'Mbao', 'Dakar', 'Dakar', '770489878', 15000, '2019-01-28 00:00:00', 0),
-(463, 'GDF', 'DAKAR', 'DAKAR', 'dk1560', 20000, '2019-01-31 00:00:00', 0),
-(465, 'GDF', 'DAKAR', 'DAKAR', 'th6195', 20000, '2019-02-01 00:00:00', 0),
-(152, 'GDF', 'DAKAR', 'DAKAR', 'dk0783', 20000, '2019-02-07 00:00:00', 0),
-(153, 'GDF', 'DAKAR', 'DAKAR', 'dk8159', 40000, '2019-02-07 00:00:00', 0),
-(300, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2019-02-12 00:00:00', 0),
-(3838, 'IBRAHIMA TOURE', 'DAKAR', 'DAKAR', 'dk8568as', 120000, '2019-02-14 00:00:00', 1),
-(390, 'Mbao', 'Dakar', 'Dakar', '770489878', 160000, '2019-02-15 00:00:00', 0),
-(2308, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk7213an', 40000, '2019-02-26 00:00:00', 0),
-(2306, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk3491am', 20000, '2019-02-21 00:00:00', 0),
-(2309, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk3491am', 20000, '2019-02-27 00:00:00', 0),
-(111, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2019-02-27 00:00:00', 0),
-(112, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2019-02-27 00:00:00', 0),
-(170, 'GDF', 'DAKAR', 'DAKAR', 'dk5245', 20000, '2019-03-05 00:00:00', 0),
-(209, 'Colobane', 'Dakar', 'Dakar', '775484069', 15000, '2019-03-13 00:00:00', 0),
-(203, 'Colobane', 'Dakar', 'Dakar', '775484069', 7000, '2019-03-14 00:00:00', 0),
-(469, 'GDF', 'DAKAR', 'DAKAR', 'dk5247', 20000, '2019-03-18 00:00:00', 0),
-(470, 'GDF', 'DAKAR', 'DAKAR', 'dk5271', 20000, '2019-03-21 00:00:00', 0),
-(471, 'GDF', 'DAKAR', 'DAKAR', 'dk1755', 20000, '2019-03-21 00:00:00', 0),
-(2314, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk9536ag', 60000, '2019-03-22 00:00:00', 0),
-(473, 'GDF', 'DAKAR', 'DAKAR', 'dk4749', 20000, '2019-03-22 00:00:00', 0);
+INSERT INTO `bon` (`Identifiant`, `Nom`, `Ville`, `Region`, `Numero_auto`, `Montant`, `Date`, `datePayer`, `Etat`) VALUES
+(50, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-07-16 00:00:00', NULL, 0),
+(223, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-05 00:00:00', NULL, 0),
+(52, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-07-19 00:00:00', NULL, 0),
+(491, 'GDF', 'DAKAR', 'DAKAR', 'dk 9342', 20000, '2018-07-25 00:00:00', NULL, 1),
+(451, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-09-17 00:00:00', NULL, 0),
+(2302, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk 7033 ag', 10000, '2018-07-28 00:00:00', NULL, 1),
+(2303, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk 7033ag', 70000, '2018-07-28 00:00:00', NULL, 1),
+(74, 'Colobane', 'Dakar', 'Dakar', '77 548 4069', 30000, '2018-07-28 00:00:00', NULL, 1),
+(75, 'Colobane', 'Dakar', 'Dakar', '77 5484069', 35000, '2018-07-28 00:00:00', NULL, 1),
+(63, 'Colobane', 'Dakar', 'Dakar', '775484069', 6000, '2018-08-01 00:00:00', NULL, 0),
+(64, 'Colobane', 'Dakar', 'Dakar', '775484069', 10000, '2018-08-01 00:00:00', NULL, 0),
+(66, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-08-02 00:00:00', NULL, 0),
+(67, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-08-02 00:00:00', NULL, 0),
+(67, 'Colobane', 'Dakar', 'Dakar', '775484069', 30000, '2018-08-03 00:00:00', NULL, 1),
+(115, 'Colobane', 'Dakar', 'Dakar', '775484069', 10000, '2018-08-15 00:00:00', NULL, 0),
+(3535, 'IBRAHIMA TOURE', 'DAKAR', 'DAKAR', '8572', 20000, '2018-08-17 00:00:00', NULL, 1),
+(356, 'GDF', 'DAKAR', 'DAKAR', 'dk 3097', 20000, '2018-08-27 00:00:00', NULL, 1),
+(126, 'Colobane', 'Dakar', 'Dakar', '775484069', 30000, '2018-08-28 00:00:00', NULL, 0),
+(127, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-08-29 00:00:00', NULL, 0),
+(358, 'GDF', 'DAKAR', 'DAKAR', 'th3465', 35000, '2018-09-03 00:00:00', NULL, 1),
+(135, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2018-09-03 00:00:00', NULL, 0),
+(136, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2018-09-03 00:00:00', NULL, 0),
+(137, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-03 00:00:00', '2019-08-10 13:06:16', 1),
+(138, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-03 00:00:00', NULL, 0),
+(360, 'GDF', 'DAKAR', 'DAKAR', 'dk 0679', 40000, '2018-09-10 00:00:00', NULL, 1),
+(361, 'GDF', 'DAKAR', 'DAKAR', 'dk3178', 20000, '2018-09-10 00:00:00', NULL, 1),
+(3175, 'IBRAHIMA TOURE', 'DAKAR', 'DAKAR', 'dk9054a1', 20000, '2018-09-10 00:00:00', NULL, 1),
+(147, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-10 00:00:00', NULL, 0),
+(148, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-10 00:00:00', NULL, 0),
+(368, 'GDF', 'DAKAR', 'DAKAR', 'dk5245', 20000, '2018-09-18 00:00:00', NULL, 1),
+(494, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-09-19 00:00:00', NULL, 1),
+(491, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-09-21 00:00:00', NULL, 0),
+(494, 'Colobane', 'Dakar', 'Dakar', '775484069', 20000, '2018-09-22 00:00:00', NULL, 1),
+(374, 'GDF', 'DAKAR', 'DAKAR', 'dk1941', 20000, '2018-10-03 00:00:00', NULL, 1),
+(411, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', NULL, 0),
+(412, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', NULL, 0),
+(413, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', NULL, 0),
+(414, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-04 00:00:00', NULL, 0),
+(415, 'GDF', 'DAKAR', 'DAKAR', 'th8554', 30000, '2019-02-21 00:00:00', NULL, 0),
+(416, 'Mbao', 'Dakar', 'Dakar', '770489878', 120000, '2018-10-09 00:00:00', NULL, 0),
+(417, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-10-09 00:00:00', NULL, 0),
+(418, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-10-09 00:00:00', NULL, 0),
+(351, 'Mbao', 'Dakar', 'Dakar', '770489878', 60000, '2018-10-18 00:00:00', NULL, 0),
+(246, 'Mbao', 'Dakar', 'Dakar', '770489878', 130000, '2018-10-19 00:00:00', NULL, 0),
+(355, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2018-10-22 00:00:00', NULL, 0),
+(365, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-24 00:00:00', NULL, 0),
+(366, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-10-24 00:00:00', NULL, 0),
+(367, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-10-24 00:00:00', NULL, 0),
+(386, 'GDF', 'DAKAR', 'DAKAR', 'dk 0783', 10000, '2018-10-24 00:00:00', NULL, 0),
+(23, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk8189am', 80000, '2018-11-07 00:00:00', NULL, 1),
+(388, 'GDF', 'DAKAR', 'DAKAR', 'dk3097', 20000, '2018-11-07 00:00:00', NULL, 1),
+(2304, 'MOURIDE', 'DAKAR', 'DAKAR', 'yh4751e', 60000, '2018-11-08 00:00:00', NULL, 1),
+(374, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-11-10 00:00:00', NULL, 0),
+(14144, 'GDF', 'DAKAR', 'DAKAR', '578', 45645, '2018-11-11 00:00:00', NULL, 1),
+(757, 'GDF', 'DAKAR', 'DAKAR', '755', 575, '2018-11-11 00:00:00', NULL, 1),
+(54, 'GDF', 'DAKAR', 'DAKAR', '54', 1000, '2018-11-11 00:00:00', NULL, 1),
+(375, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-11-12 00:00:00', NULL, 0),
+(2305, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk2142', 80000, '2018-11-30 00:00:00', NULL, 1),
+(399, 'GDF', 'DAKAR', 'DAKAR', 'dk4306', 20000, '2018-12-08 00:00:00', NULL, 1),
+(400, 'GDF', 'DAKAR', 'DAKAR', 'dk8339', 20000, '2018-12-10 00:00:00', NULL, 1),
+(201, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-12-11 00:00:00', NULL, 0),
+(202, 'Mbao', 'Dakar', 'Dakar', '770489878', 10000, '2018-12-11 00:00:00', NULL, 0),
+(203, 'Mbao', 'Dakar', 'Dakar', '770483878', 40000, '2018-12-12 00:00:00', NULL, 0),
+(165, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2018-12-25 00:00:00', NULL, 0),
+(166, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2018-12-26 00:00:00', NULL, 0),
+(167, 'Mbao', 'Dakar', 'Dakar', '770489878', 12500, '2018-12-26 00:00:00', NULL, 0),
+(168, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2018-12-27 00:00:00', NULL, 0),
+(169, 'Mbao', 'Dakar', 'Dakar', '770489878', 120000, '2018-12-28 00:00:00', NULL, 0),
+(200, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-02 00:00:00', NULL, 0),
+(221, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2019-01-04 00:00:00', NULL, 0),
+(51, 'GDF', 'DAKAR', 'DAKAR', 'th6195', 20000, '2019-01-04 00:00:00', NULL, 1),
+(224, 'Mbao', 'Dakar', 'Dakar', '770489878', 15000, '2019-01-05 00:00:00', NULL, 0),
+(252, 'GDF', 'DAKAR', 'DAKAR', 'dk5245', 20000, '2019-01-07 00:00:00', NULL, 1),
+(254, 'GDF', 'DAKAR', 'DAKAR', 'dk7998', 20000, '2019-01-08 00:00:00', NULL, 1),
+(255, 'GDF', 'DAKAR', 'DAKAR', 'dk5246', 20000, '2019-01-08 00:00:00', NULL, 1),
+(256, 'GDF', 'DAKAR', 'DAKAR', 'dk2874', 20000, '2019-01-09 00:00:00', NULL, 1),
+(53, 'Mbao', 'Dakar', 'Dakar', '770489878', 600000, '2019-01-09 00:00:00', NULL, 0),
+(56, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2019-01-09 00:00:00', NULL, 0),
+(220, 'Mbao', 'Dakar', 'Dakar', '770489878', 20000, '2019-01-21 00:00:00', NULL, 0),
+(258, 'GDF', 'DAKAR', 'DAKAR', 'dk8159', 20000, '2019-01-21 00:00:00', NULL, 0),
+(353, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-23 00:00:00', NULL, 0),
+(233, 'Mbao', 'Dakar', 'Dakar', '770489878', 30000, '2019-01-25 00:00:00', NULL, 0),
+(213, 'Mbao', 'Dakar', 'Dakar', '770489878', 40000, '2019-01-28 00:00:00', NULL, 0),
+(214, 'Mbao', 'Dakar', 'Dakar', '770489878', 70000, '2019-01-28 00:00:00', NULL, 0),
+(215, 'Mbao', 'Dakar', 'Dakar', '770489878', 15000, '2019-01-28 00:00:00', NULL, 0),
+(463, 'GDF', 'DAKAR', 'DAKAR', 'dk1560', 20000, '2019-01-31 00:00:00', NULL, 0),
+(465, 'GDF', 'DAKAR', 'DAKAR', 'th6195', 20000, '2019-02-01 00:00:00', NULL, 0),
+(152, 'GDF', 'DAKAR', 'DAKAR', 'dk0783', 20000, '2019-02-07 00:00:00', NULL, 0),
+(153, 'GDF', 'DAKAR', 'DAKAR', 'dk8159', 40000, '2019-02-07 00:00:00', NULL, 0),
+(300, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2019-02-12 00:00:00', NULL, 0),
+(3838, 'IBRAHIMA TOURE', 'DAKAR', 'DAKAR', 'dk8568as', 120000, '2019-02-14 00:00:00', NULL, 1),
+(390, 'Mbao', 'Dakar', 'Dakar', '770489878', 160000, '2019-02-15 00:00:00', NULL, 0),
+(2308, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk7213an', 40000, '2019-02-26 00:00:00', NULL, 0),
+(2306, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk3491am', 20000, '2019-02-21 00:00:00', NULL, 0),
+(2309, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk3491am', 20000, '2019-02-27 00:00:00', NULL, 0),
+(111, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2019-02-27 00:00:00', NULL, 0),
+(112, 'Mbao', 'Dakar', 'Dakar', '770489878', 80000, '2019-02-27 00:00:00', NULL, 0),
+(170, 'GDF', 'DAKAR', 'DAKAR', 'dk5245', 20000, '2019-03-05 00:00:00', NULL, 0),
+(209, 'Colobane', 'Dakar', 'Dakar', '775484069', 15000, '2019-03-13 00:00:00', NULL, 0),
+(203, 'Colobane', 'Dakar', 'Dakar', '775484069', 7000, '2019-03-14 00:00:00', NULL, 0),
+(469, 'GDF', 'DAKAR', 'DAKAR', 'dk5247', 20000, '2019-03-18 00:00:00', NULL, 0),
+(470, 'GDF', 'DAKAR', 'DAKAR', 'dk5271', 20000, '2019-03-21 00:00:00', NULL, 0),
+(471, 'GDF', 'DAKAR', 'DAKAR', 'dk1755', 20000, '2019-03-21 00:00:00', NULL, 0),
+(2314, 'MOURIDE', 'DAKAR', 'DAKAR', 'dk9536ag', 60000, '2019-03-22 00:00:00', NULL, 0),
+(473, 'GDF', 'DAKAR', 'DAKAR', 'dk4749', 20000, '2019-03-22 00:00:00', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -186,17 +183,16 @@ INSERT INTO `bon` (`Identifiant`, `Nom`, `Ville`, `Region`, `Numero_auto`, `Mont
 -- Structure de la table `connection`
 --
 
-DROP TABLE IF EXISTS `connection`;
 CREATE TABLE IF NOT EXISTS `connection` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Travail` varchar(50) NOT NULL,
   `Login` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
--- Déchargement des données de la table `connection`
+-- Contenu de la table `connection`
 --
 
 INSERT INTO `connection` (`Identifiant`, `Travail`, `Login`, `Password`) VALUES
@@ -210,17 +206,16 @@ INSERT INTO `connection` (`Identifiant`, `Travail`, `Login`, `Password`) VALUES
 -- Structure de la table `depense`
 --
 
-DROP TABLE IF EXISTS `depense`;
 CREATE TABLE IF NOT EXISTS `depense` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Montant` double NOT NULL,
   `Commentaire` text NOT NULL,
   `Date` date NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=1853 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1853 ;
 
 --
--- Déchargement des données de la table `depense`
+-- Contenu de la table `depense`
 --
 
 INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
@@ -259,7 +254,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (98, 1000, 'aissatou', '2018-07-19'),
 (99, 6000, 'depense', '2018-07-19'),
 (100, 20000, 'depense(djiby)', '2018-07-19'),
-(101, 5000, 'achat d\'1 yakh d 430', '2018-07-19'),
+(101, 5000, 'achat d''1 yakh d 430', '2018-07-19'),
 (102, 6000, 'achat de garniture 380', '2018-07-20'),
 (103, 1000, 'essence(mor)', '2018-07-20'),
 (104, 600, 'achat de credit', '2018-07-20'),
@@ -274,7 +269,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (113, 1000, 'sougou', '2018-07-21'),
 (114, 1000, 'baye ibra', '2018-07-21'),
 (115, 1000, 'aissatou', '2018-07-21'),
-(116, 10000, 'achat d\'un paquet ribè8', '2018-07-21'),
+(116, 10000, 'achat d''un paquet ribè8', '2018-07-21'),
 (117, 10000, 'dfjiby', '2018-07-21'),
 (118, 6000, 'depense', '2018-07-23'),
 (119, 6000, 'mor', '2018-07-23'),
@@ -288,23 +283,23 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (127, 6000, 'depense', '2018-07-24'),
 (128, 1000, 'baye ibra', '2018-07-24'),
 (129, 1000, 'aissatou', '2018-07-24'),
-(130, 10000, 'achat d\'un pakè ribè', '2018-07-24'),
+(130, 10000, 'achat d''un pakè ribè', '2018-07-24'),
 (131, 1000, 'moto (sougou)', '2018-07-25'),
 (132, 10000, 'djiby', '2018-07-25'),
 (133, 1000, 'essence (sougou)', '2018-07-25'),
-(134, 5000, 'achat d\'un disc 350', '2018-07-25'),
+(134, 5000, 'achat d''un disc 350', '2018-07-25'),
 (135, 2000, 'transport disc', '2018-07-25'),
 (136, 6000, 'depense', '2018-07-25'),
 (137, 1000, 'baye ibra', '2018-07-25'),
 (138, 1000, 'aissatou', '2018-07-25'),
 (139, 13000, 'modou orange money', '2018-07-25'),
-(140, 10000, 'achat d\'un paquet de ribè', '2018-07-26'),
+(140, 10000, 'achat d''un paquet de ribè', '2018-07-26'),
 (141, 3000, 'gaz', '2018-07-26'),
 (142, 1000, 'essence(sougou)', '2018-07-26'),
 (143, 1000, 'aissatou', '2018-07-26'),
 (144, 1000, 'baye ibra', '2018-07-26'),
 (145, 6000, 'depense', '2018-07-26'),
-(146, 7500, 'achat d\'un paquet lait(djiby)', '2018-07-27'),
+(146, 7500, 'achat d''un paquet lait(djiby)', '2018-07-27'),
 (147, 1000, 'reparation moto(mor)', '2018-07-27'),
 (148, 6000, 'depense', '2018-07-27'),
 (149, 1000, 'baye ibra', '2018-07-27'),
@@ -570,8 +565,8 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (409, 1000, 'baye ibra', '2018-09-14'),
 (410, 3500, 'machine capa', '2018-09-17'),
 (411, 10000, 'bobineur', '2018-09-17'),
-(412, 12000, 'achat d\'un jeu 19657', '2018-09-17'),
-(413, 10000, 'achat d\'un jeu19049', '2018-09-17'),
+(412, 12000, 'achat d''un jeu 19657', '2018-09-17'),
+(413, 10000, 'achat d''un jeu19049', '2018-09-17'),
 (414, 1000, 'essence', '2018-09-17'),
 (415, 10000, 'achat de 3friophe 18', '2018-09-17'),
 (416, 6000, 'depense', '2018-09-17'),
@@ -617,7 +612,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (456, 10000, 'achat d1 jeu 19049', '2018-09-24'),
 (457, 7000, 'mor', '2018-09-24'),
 (458, 1000, 'essence(mor)', '2018-09-24'),
-(459, 5000, 'achat d\'un jeu 350', '2018-09-25'),
+(459, 5000, 'achat d''un jeu 350', '2018-09-25'),
 (460, 5000, 'poubelle', '2018-09-25'),
 (461, 1000, 'jakarta', '2018-09-25'),
 (462, 1000, 'sougou(puce)', '2018-09-25'),
@@ -657,7 +652,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (496, 1000, 'baye ibra', '2018-10-01'),
 (497, 3000, 'gaz', '2018-10-01'),
 (498, 6000, 'sougou', '2018-10-01'),
-(499, 13000, 'achat d\'un jeu 19657', '2018-10-02'),
+(499, 13000, 'achat d''un jeu 19657', '2018-10-02'),
 (500, 1000, 'essene', '2018-10-02'),
 (501, 18000, 'amed pièce', '2018-10-02'),
 (502, 12000, 'achat de 2jeux 380', '2018-10-02'),
@@ -666,7 +661,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (505, 1000, 'baye ibra', '2018-10-02'),
 (506, 6000, 'depense', '2018-10-02'),
 (507, 20000, 'depense djiby', '2018-10-02'),
-(508, 3000, 'achat d\'\"1 jeu 250', '2018-10-03'),
+(508, 3000, 'achat d''"1 jeu 250', '2018-10-03'),
 (509, 1000, 'essence', '2018-10-03'),
 (510, 6000, 'depense', '2018-10-03'),
 (511, 1000, 'baye ibra', '2018-10-03'),
@@ -691,7 +686,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (530, 1000, 'sougou', '2018-10-08'),
 (531, 2000, 'cheikh diop', '2018-10-08'),
 (532, 1000, 'essence', '2018-10-09'),
-(533, 2500, 'achat d\'un jeu 225', '2018-10-09'),
+(533, 2500, 'achat d''un jeu 225', '2018-10-09'),
 (534, 3500, 'achat roulau', '2018-10-09'),
 (535, 1000, 'sougou', '2018-10-09'),
 (536, 6000, 'depense', '2018-10-09'),
@@ -704,17 +699,17 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (543, 1000, 'sougou', '2018-10-10'),
 (544, 20000, 'depense djiby', '2018-10-10'),
 (545, 500, 'diakarta', '2018-10-10'),
-(546, 5000, 'achat d\'un jeu 350', '2018-10-11'),
+(546, 5000, 'achat d''un jeu 350', '2018-10-11'),
 (547, 2000, 'transport', '2018-10-11'),
 (548, 1000, 'moto', '2018-10-11'),
-(549, 6000, 'achat d\'un jeu380', '2018-10-11'),
-(550, 12000, 'achat d\'un 19187', '2018-10-11'),
+(549, 6000, 'achat d''un jeu380', '2018-10-11'),
+(550, 12000, 'achat d''un 19187', '2018-10-11'),
 (551, 6000, 'depense', '2018-10-11'),
 (552, 1000, 'sougou', '2018-10-11'),
 (553, 2000, 'moto', '2018-10-11'),
 (554, 3000, 'gaz', '2018-10-11'),
 (555, 20000, 'djiby', '2018-10-11'),
-(556, 10000, 'acht d\'un jeu 19049', '2018-10-12'),
+(556, 10000, 'acht d''un jeu 19049', '2018-10-12'),
 (557, 1000, 'essence', '2018-10-12'),
 (558, 1500, 'moto', '2018-10-12'),
 (559, 6000, 'depense', '2018-10-12'),
@@ -749,7 +744,7 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (588, 4000, 'pa kane', '2018-10-17'),
 (589, 12000, 'modou yakh 3frioff', '2018-10-17'),
 (590, 20000, 'aisatou', '2018-10-18'),
-(591, 3000, 'achat d\'un jeu 250', '2018-10-18'),
+(591, 3000, 'achat d''un jeu 250', '2018-10-18'),
 (592, 1000, 'essence', '2018-10-18'),
 (593, 6000, 'depense', '2018-10-18'),
 (594, 1000, 'baye ibra', '2018-10-18'),
@@ -1521,9 +1516,9 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 (1371, 1000, 'faty', '2019-01-26'),
 (1372, 1000, 'bay ibra', '2019-01-26'),
 (1373, 1000, 'ameth sougou', '2019-01-26'),
-(1374, 2000, 'essence', '2019-01-26'),
-(1375, 10000, 'modou', '2019-01-28');
+(1374, 2000, 'essence', '2019-01-26');
 INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
+(1375, 10000, 'modou', '2019-01-28'),
 (1376, 1300, '1disc àcouper', '2019-01-28'),
 (1377, 2000, 'essence', '2019-01-28'),
 (1378, 6000, 'djiby', '2019-01-28'),
@@ -2007,7 +2002,6 @@ INSERT INTO `depense` (`Identifiant`, `Montant`, `Commentaire`, `Date`) VALUES
 -- Structure de la table `facture`
 --
 
-DROP TABLE IF EXISTS `facture`;
 CREATE TABLE IF NOT EXISTS `facture` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Montant` double NOT NULL,
@@ -2017,10 +2011,10 @@ CREATE TABLE IF NOT EXISTS `facture` (
   `Prenom` varchar(50) NOT NULL,
   `datePayer` datetime DEFAULT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=1117 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1117 ;
 
 --
--- Déchargement des données de la table `facture`
+-- Contenu de la table `facture`
 --
 
 INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`, `datePayer`) VALUES
@@ -2129,7 +2123,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (242, 17000, '2018-08-09 17:43:20', 1, 'amadou gppl', 'amadou gppl', NULL),
 (243, 15000, '2018-08-10 18:32:11', 1, 'faye', 'ousmane', NULL),
 (244, 10000, '2018-08-08 18:25:43', 1, 'diop', 'abdou l maire', NULL),
-(245, 30000, '2018-08-08 18:29:25', 0, 'diop ', 'abdou l maire', NULL),
+(245, 30000, '2018-08-08 18:29:25', 1, 'diop ', 'abdou l maire', '2019-08-10 12:39:49'),
 (246, 20000, '2018-08-08 18:30:27', 0, 'diop', 'abdou l maire', NULL),
 (247, 15000, '2018-08-09 17:34:19', 1, 'hics', 'hics', NULL),
 (248, 13000, '2018-08-09 17:38:44', 1, 'ndiaye', 'maguette', NULL),
@@ -2462,7 +2456,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (575, 9000, '2018-11-22 18:28:03', 1, 'diop', 'mouride', NULL),
 (576, 12500, '2018-11-22 18:30:29', 1, 'wade', 'aliou', NULL),
 (577, 12500, '2018-11-22 18:30:53', 1, 'wade', 'aliou', NULL),
-(578, 40000, '2018-11-23 17:12:41', 0, 'gppl', 'gpll', NULL),
+(578, 40000, '2018-11-23 17:12:41', 1, 'gppl', 'gpll', '2019-08-10 12:28:09'),
 (579, 7000, '2018-11-23 17:14:04', 1, 'dièye', 'malick', NULL),
 (580, 18000, '2018-11-24 16:38:42', 1, 'diagne', 'cheikh mbackè', NULL),
 (581, 5000, '2018-11-24 16:39:18', 1, 'ba', 'alioune', NULL),
@@ -2498,7 +2492,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (611, 40000, '2018-12-01 17:05:10', 1, 'ndiaye', 'elhadj', NULL),
 (612, 18000, '2018-12-01 17:10:40', 1, 'amadou', 'amadou', NULL),
 (613, 18000, '2018-12-01 17:11:39', 1, 'boy', 'serrere', NULL),
-(614, 8000, '2018-12-01 17:12:19', 0, 'selove', 'selove', NULL),
+(614, 8000, '2018-12-01 17:12:19', 1, 'selove', 'selove', '2019-08-10 12:29:10'),
 (615, 35000, '2018-12-04 17:51:31', 1, 'diop', 'dane', NULL),
 (616, 17000, '2018-12-03 17:39:37', 1, 'selove', 'selove', NULL),
 (617, 17000, '2018-12-03 17:40:02', 1, 'dane', 'dane', NULL),
@@ -2627,7 +2621,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (741, 40000, '2018-12-31 17:20:41', 1, 'daouda', 'daouda', NULL),
 (742, 5000, '2018-12-31 17:22:32', 1, 'tapha', 'tapha', NULL),
 (743, 20000, '2019-01-02 18:31:45', 1, 'touba', 'transit', NULL),
-(744, 10000, '2018-12-31 17:37:11', 0, 'medoune', 'medoune', NULL),
+(744, 10000, '2019-08-10 12:09:20', 1, 'medoune', 'medoune', NULL),
 (745, 80000, '2019-01-02 18:58:03', 1, 'ndiaye', 'vieux', NULL),
 (746, 20000, '2019-01-02 19:01:09', 1, 'mame ', 'seynabou', NULL),
 (747, 17000, '2019-01-02 19:01:40', 1, 'seck', 'leye', NULL),
@@ -2710,7 +2704,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (826, 20000, '2019-01-18 18:10:31', 1, 'biteye', 'biteye', NULL),
 (827, 7000, '2019-01-18 18:35:05', 1, 'moussa', 'moussa', NULL),
 (829, 40000, '2019-03-31 12:10:59', 1, 'arezki', 'arezki', NULL),
-(830, 35000, '2019-01-18 18:41:56', 0, 'ndiaye', 'vieux', NULL),
+(830, 35000, '2019-01-18 18:41:56', 1, 'ndiaye', 'vieux', NULL),
 (831, 40000, '2019-01-21 17:37:35', 1, 'seye', 'cheikh', NULL),
 (832, 20000, '2019-01-28 11:17:47', 1, 'fall', 'saourou', NULL),
 (833, 18000, '2019-01-19 20:01:44', 1, 'mouse', 'mouse', NULL),
@@ -2753,7 +2747,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (870, 12500, '2019-01-28 18:59:34', 1, 'fall', 'cheikh', NULL),
 (871, 12500, '2019-01-30 18:18:39', 1, 'fall ', 'cheikh', NULL),
 (872, 12500, '2019-01-30 18:18:23', 1, 'fall', 'cheikh', NULL),
-(873, 30000, '2019-01-28 19:23:57', 0, 'diagne', 'bara', NULL),
+(873, 30000, '2019-08-10 12:10:39', 1, 'diagne', 'bara', NULL),
 (874, 12500, '2019-01-28 19:29:49', 1, 'seck', 'leye', NULL),
 (875, 20000, '2019-01-29 18:43:19', 1, 'gounas', 'gounas', NULL),
 (876, 20000, '2019-01-29 18:43:58', 1, 'cheikh', 'cheikh', NULL),
@@ -2774,7 +2768,6 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (891, 13000, '2019-01-31 18:50:31', 1, 'fall', 'saourou', NULL),
 (892, 17000, '2019-01-31 18:50:01', 1, 'leye', 'moussa', NULL),
 (893, 30000, '2019-01-31 18:47:35', 0, 'diop', 'medoune', NULL),
-(894, 17500, '2019-01-31 18:48:15', 0, 'diop', 'medoune', NULL),
 (895, 8000, '2019-01-31 18:49:03', 1, 'ousseynou', 'ousseynou', NULL),
 (896, 10000, '2019-02-01 19:03:32', 1, 'fall', 'yakhya', NULL),
 (897, 25000, '2019-02-01 19:04:20', 1, 'seck', 'leye', NULL),
@@ -2801,7 +2794,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (918, 150000, '2019-02-05 18:28:25', 1, 'modou', 'gueye', NULL),
 (919, 25000, '2019-02-05 18:39:24', 1, 'leye', 'secke', NULL),
 (920, 40000, '2019-02-26 18:15:57', 1, 'ba', 'cherif', NULL),
-(921, 12500, '2019-02-05 18:43:45', 0, 'leuye ', 'secke', NULL),
+(921, 12500, '2019-08-10 11:54:58', 1, 'leuye ', 'secke', NULL),
 (922, 36000, '2019-02-06 18:27:22', 1, 'mapathe', 'ndioucke', NULL),
 (923, 80000, '2019-02-06 18:27:27', 1, 'mapathe', 'ndioucke', NULL),
 (924, 54000, '2019-02-06 18:11:54', 1, 'diop', 'mouride', NULL),
@@ -2818,9 +2811,9 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (935, 30000, '2019-02-08 16:27:12', 1, 'bamba', 'bama', NULL),
 (936, 35000, '2019-02-08 16:27:49', 1, 'medoune', 'diop', NULL),
 (937, 40000, '2019-02-09 16:22:05', 1, 'selove', 'selove', NULL),
-(938, 9000, '2019-02-09 16:22:24', 1, 'x', 'x', NULL),
-(939, 20000, '2019-02-12 17:52:58', 1, 'gueye', 'pape', NULL);
+(938, 9000, '2019-02-09 16:22:24', 1, 'x', 'x', NULL);
 INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`, `datePayer`) VALUES
+(939, 20000, '2019-02-12 17:52:58', 1, 'gueye', 'pape', NULL),
 (940, 20000, '2019-02-11 18:59:39', 1, 'x', 'x', NULL),
 (941, 25000, '2019-02-11 19:01:09', 1, 'djangou', 'djangou', NULL),
 (942, 6000, '2019-02-11 19:02:01', 1, 'gueye', 'el hadj', NULL),
@@ -2862,7 +2855,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (978, 20000, '2019-02-20 17:41:40', 1, 'ndiaye', 'assane', NULL),
 (979, 20000, '2019-02-20 17:42:14', 1, 'hakim', 'goumbala', NULL),
 (980, 20000, '2019-02-20 17:42:39', 1, 'slps', 'slps', NULL),
-(981, 40000, '2019-02-20 17:44:53', 0, 'ndiouck', 'mapathè', NULL),
+(981, 40000, '2019-02-20 17:44:53', 1, 'ndiouck', 'mapathè', '2019-08-10 12:08:56'),
 (982, 17000, '2019-02-21 17:26:40', 1, 'babacar', 'xxxxx', NULL),
 (983, 20000, '2019-02-21 17:28:05', 1, 'abdou', 'goumbala', NULL),
 (984, 20000, '2019-02-22 17:24:10', 1, 'khalifa', 'xx', NULL),
@@ -2875,7 +2868,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (991, 20000, '2019-02-25 18:10:57', 1, 'gueye', 'holding', NULL),
 (992, 6000, '2019-02-25 18:11:29', 1, 'mor', 'fall', NULL),
 (993, 4000, '2019-02-25 18:40:13', 1, 'diop', 'modou', NULL),
-(994, 72000, '2019-02-26 18:25:11', 0, 'ba', 'cherif', NULL),
+(994, 72000, '2019-02-26 18:25:11', 1, 'ba', 'cherif', NULL),
 (995, 25000, '2019-02-26 18:25:40', 1, 'pape', 'pape', NULL),
 (996, 120000, '2019-03-14 15:35:22', 1, 'ba', 'cherif', NULL),
 (997, 20000, '2019-02-27 18:27:48', 1, 'gueye', 'holding', NULL),
@@ -2885,33 +2878,30 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (1001, 30000, '2019-02-28 17:45:18', 1, 'baye', 'fall', NULL),
 (1002, 10000, '2019-03-04 18:02:26', 1, 'pa', 'hizbou', NULL),
 (1003, 7000, '2019-03-05 17:41:03', 1, 'aliou', 'aliou', NULL),
-(1004, 10000, '2019-02-28 17:51:31', 0, 'ndiouck', 'mapathè', NULL),
+(1004, 10000, '2019-02-28 17:51:31', 1, 'ndiouck', 'mapathè', '2019-08-10 12:18:26'),
 (1005, 8000, '2019-03-01 19:34:05', 1, 'zal', 'zal', NULL),
 (1006, 80000, '2019-03-04 18:17:41', 1, 'ousseynou', 'ousseynou', NULL),
-(1007, 5000, '2019-02-28 18:34:17', 0, 'mbodj', 'mbodj', NULL),
+(1007, 5000, '2019-02-28 18:34:17', 1, 'mbodj', 'mbodj', '2019-08-10 11:39:58'),
 (1008, 10000, '2019-03-01 19:07:59', 1, 'pa hizbou', 'hizbou', NULL),
 (1009, 20000, '2019-03-01 19:09:44', 1, 'gueye', 'holding', NULL),
 (1010, 17000, '2019-03-01 19:10:42', 1, 'serigne', 'guome', NULL),
 (1011, 15000, '2019-03-01 19:11:56', 1, 'ndiaye', 'adama', NULL),
 (1012, 20000, '2019-03-01 19:17:48', 0, 'ba', 'cherif', NULL),
 (1013, 20000, '2019-03-01 19:21:15', 1, 'bada', 'bada', NULL),
-(1014, 8000, '2019-03-01 19:19:36', 0, 'diby', 'djyby', NULL),
+(1014, 8000, '2019-03-01 19:19:36', 1, 'diby', 'djyby', '2019-08-10 12:19:38'),
 (1015, 20000, '2019-03-02 18:39:51', 1, 'niang', 'niang', NULL),
 (1016, 15000, '2019-03-04 18:10:08', 1, 'medoune', 'medoune', NULL),
 (1017, 10000, '2019-03-04 18:11:17', 1, 'medoune', 'medoune', NULL),
-(1018, 40000, '2019-03-04 18:13:10', 0, 'mapathè', 'ndiouck', NULL),
-(1019, 40000, '2019-03-04 18:13:39', 0, 'ndiouck', 'mapathè', NULL),
 (1020, 40000, '2019-03-05 17:25:46', 1, 'warè ba', 'cherif', NULL),
 (1021, 40000, '2019-03-30 17:56:58', 1, 'ousseynou', 'ousseynou', NULL),
-(1022, 20000, '2019-03-05 17:50:46', 0, 'keur ', 'mame seynabou', NULL),
 (1023, 0, '2019-03-05 19:14:55', 1, 'x', 'x', NULL),
 (1024, 38000, '2019-03-05 19:15:26', 1, 'laye', 'laye', NULL),
 (1025, 19000, '2019-03-05 19:16:56', 1, 'laye', 'laye', NULL),
 (1026, 40000, '2019-03-07 17:45:59', 1, 'mor ', 'talla', NULL),
 (1027, 20000, '2019-03-08 19:03:39', 1, 'blue', 'drive', NULL),
-(1028, 80000, '2019-03-06 19:27:30', 0, 'gppl', 'gppl', NULL),
+(1028, 80000, '2019-08-10 11:23:40', 1, 'gppl', 'gppl', NULL),
 (1029, 60000, '2019-03-31 12:12:10', 1, 'arezki', 'arezki', NULL),
-(1030, 30000, '2019-03-07 17:58:52', 0, 'arezki', 'arezki', NULL),
+(1030, 30000, '2019-08-10 11:20:12', 1, 'arezki', 'arezki', NULL),
 (1031, 20000, '2019-03-08 19:06:08', 1, 'ciss', 'souhaibou', NULL),
 (1032, 30000, '2019-03-08 19:07:11', 1, 'ciss', 'souhaibou', NULL),
 (1033, 7000, '2019-03-08 19:07:38', 1, 'thiam', 'omar', NULL),
@@ -2925,7 +2915,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (1041, 25000, '2019-03-11 18:38:52', 1, 'sy', 'ablaye', NULL),
 (1042, 20000, '2019-03-11 18:40:09', 1, 'atroce', 'atroce', NULL),
 (1043, 0, '2019-03-11 18:53:23', 1, 'niokolo transport', 'reparation', NULL),
-(1044, 120000, '2019-03-12 18:46:03', 0, 'ba', 'cherif', NULL),
+(1044, 120000, '2019-08-10 11:50:47', 1, 'ba', 'cherif', NULL),
 (1045, 36000, '2019-03-13 18:01:07', 1, 'diop', 'ousmane', NULL),
 (1046, 15000, '2019-03-13 18:01:52', 1, 'zal', 'zal', NULL),
 (1047, 12000, '2019-03-13 18:02:21', 1, 'diagne', 'youssou', NULL),
@@ -2936,7 +2926,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (1054, 90000, '2019-03-14 15:37:24', 1, 'ba', 'cherif', NULL),
 (1056, 20000, '2019-03-13 18:28:57', 0, 'ba', 'cherif', NULL),
 (1057, 80000, '2019-03-13 18:29:38', 0, 'gppl', 'gppl', NULL),
-(1058, 40000, '2019-03-13 18:38:14', 0, 'gppl', 'gppl', NULL),
+(1058, 40000, '2019-03-13 18:38:14', 1, 'gppl', 'gppl', '2019-08-10 11:22:27'),
 (1059, 12500, '2019-03-13 18:39:17', 1, 'seck', 'leye', NULL),
 (1060, 36000, '2019-03-14 18:51:12', 1, 'diop', 'ousmane', NULL),
 (1061, 8000, '2019-03-14 18:51:48', 1, 'ibou', 'ibou', NULL),
@@ -2947,7 +2937,7 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (1066, 20000, '2019-03-20 18:41:16', 1, 'wakeur', 'serigne fallou', NULL),
 (1067, 10000, '2019-03-15 19:32:09', 1, 'x', 'x', NULL),
 (1068, 17000, '2019-03-15 19:32:43', 1, 'sarè', 'cons', NULL),
-(1069, 60000, '2019-03-15 19:41:27', 0, 'ba', 'cherif', NULL),
+(1069, 60000, '2019-03-15 19:41:27', 1, 'ba', 'cherif', '2019-08-10 11:20:55'),
 (1070, 15000, '2019-03-18 19:14:58', 1, 'faye', 'ousmane', NULL),
 (1071, 20000, '2019-03-16 17:10:41', 1, 'x', 'x', NULL),
 (1072, 20000, '2019-03-16 17:11:13', 1, 'mbay', 'mbay', NULL),
@@ -2958,12 +2948,12 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (1077, 20000, '2019-03-19 19:13:25', 1, 'ettl', 'ettl', NULL),
 (1078, 6000, '2019-03-19 19:14:44', 1, 'sdd', 'sdd', NULL),
 (1079, 8000, '2019-03-19 19:15:31', 1, 'chjeikh', 'cheikh', NULL),
-(1080, 10000, '2019-03-19 19:19:37', 0, 'ba', 'cherif', NULL),
+(1080, 10000, '2019-08-10 11:39:24', 1, 'ba', 'cherif', NULL),
 (1081, 40000, '2019-03-20 18:46:38', 1, 'faye', 'ousmane', NULL),
 (1082, 13000, '2019-03-20 18:47:06', 1, 'al', 'azar', NULL),
 (1083, 12500, '2019-03-20 18:47:36', 1, 'seck', 'leye', NULL),
 (1084, 15000, '2019-03-21 18:05:43', 1, 'doro', 'doro', NULL),
-(1085, 17000, '2019-03-20 18:57:57', 0, 'seck', 'khadim', NULL),
+(1085, 17000, '2019-03-20 18:57:57', 1, 'seck', 'khadim', '2019-08-10 11:48:47'),
 (1086, 100000, '2019-03-21 18:16:00', 1, 'pape', 'pape', NULL),
 (1087, 15000, '2019-03-21 18:16:59', 1, 'doro', 'doro', NULL),
 (1088, 80000, '2019-03-26 17:44:51', 1, 'faye', 'ousmane', NULL),
@@ -2985,14 +2975,12 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 (1104, 60000, '2019-03-28 19:04:58', 1, 'ndiaye', 'fallou', NULL),
 (1105, 20000, '2019-03-28 19:07:10', 1, 'tapha', 'tapha', NULL),
 (1106, 8000, '2019-03-28 19:07:50', 1, 'pa', 'pène', NULL),
-(1107, 20000, '2019-03-29 19:04:45', 1, 'x', 'x', NULL),
-(1108, 17000, '2019-03-29 19:05:12', 0, 'ibra', 'fall', NULL),
-(1109, 15000, '2019-03-29 19:05:38', 0, 'esci', 'esci', NULL),
+(1108, 17000, '2019-08-10 11:19:36', 1, 'ibra', 'fall', NULL),
 (1110, 20000, '2019-03-30 17:59:37', 1, 'fall ', 'makha', NULL),
 (1111, 20000, '2019-03-30 17:59:55', 1, 'al', 'hazar', NULL),
 (1112, 13000, '2019-03-30 18:00:18', 1, 'samb', 'samba', NULL),
 (1113, 20000, '2019-03-30 18:14:54', 0, 'samba', 'nioro', NULL),
-(1114, 25000, '2019-03-30 18:16:38', 0, 'laye', 'laye', NULL),
+(1114, 25000, '2019-03-30 18:16:38', 1, 'laye', 'laye', '2019-08-10 10:47:25'),
 (1115, 10000, '2019-04-21 20:25:14', 1, 'fer', 'baba', NULL),
 (1116, 10000, '2019-04-21 20:26:35', 1, 'fer', 'aba', '2019-04-21 20:26:35');
 
@@ -3002,7 +2990,6 @@ INSERT INTO `facture` (`Identifiant`, `Montant`, `Date`, `Etat`, `Nom`, `Prenom`
 -- Structure de la table `garnitures`
 --
 
-DROP TABLE IF EXISTS `garnitures`;
 CREATE TABLE IF NOT EXISTS `garnitures` (
   `bonneref` int(11) NOT NULL,
   `coderef` int(11) NOT NULL,
@@ -3012,11 +2999,11 @@ CREATE TABLE IF NOT EXISTS `garnitures` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `garnitures`
+-- Contenu de la table `garnitures`
 --
 
 INSERT INTO `garnitures` (`bonneref`, `coderef`, `Designation`, `Quantite`) VALUES
-(430, 30, 'garniture', 90),
+(430, 30, 'garniture', 91),
 (110113, 113, 'garniture', 6),
 (19187, 87, 'garniture', 193),
 (19094, 94, 'garniture', 2),
@@ -3024,7 +3011,7 @@ INSERT INTO `garnitures` (`bonneref`, `coderef`, `Designation`, `Quantite`) VALU
 (19369, 69, 'garniture', 259),
 (19036, 36, 'garniture', 310),
 (19935, 35, 'garnitur', 0),
-(19487, 87, 'garniture', 12),
+(19487, 87, 'garniture', 18),
 (19032, 32, 'garniture', 150),
 (19365, 65, 'garniture', 0),
 (19934, 34, 'garniture', 16),
@@ -3037,11 +3024,11 @@ INSERT INTO `garnitures` (`bonneref`, `coderef`, `Designation`, `Quantite`) VALU
 (215, 135, 'garniture disc', 190),
 (260, 170, 'garniture disc', 198),
 (330, 190, 'garniture disc', 194),
-(19657, 57, 'ganiture', 439),
+(19657, 57, 'ganiture', 441),
 (19049, 49, 'garniture', 936),
 (380, 190, 'ganiture disc', 13),
-(350, 190, 'garnitur disc', 48),
-(400, 200, 'garniture disc', 20),
+(350, 190, 'garnitur disc', 49),
+(400, 200, 'garniture disc', 22),
 (30400, 430, 'disques comples ', 6),
 (250, 160, 'garniture', 112),
 (1234, 34, 'rives 5', 100),
@@ -3059,17 +3046,16 @@ INSERT INTO `garnitures` (`bonneref`, `coderef`, `Designation`, `Quantite`) VALU
 -- Structure de la table `partenaires`
 --
 
-DROP TABLE IF EXISTS `partenaires`;
 CREATE TABLE IF NOT EXISTS `partenaires` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Ville` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Region` varchar(100) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Déchargement des données de la table `partenaires`
+-- Contenu de la table `partenaires`
 --
 
 INSERT INTO `partenaires` (`Identifiant`, `Nom`, `Ville`, `Region`) VALUES
@@ -3085,12 +3071,11 @@ INSERT INTO `partenaires` (`Identifiant`, `Nom`, `Ville`, `Region`) VALUES
 -- Structure de la table `personne`
 --
 
-DROP TABLE IF EXISTS `personne`;
 CREATE TABLE IF NOT EXISTS `personne` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Date` date NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -3098,7 +3083,6 @@ CREATE TABLE IF NOT EXISTS `personne` (
 -- Structure de la table `pieces`
 --
 
-DROP TABLE IF EXISTS `pieces`;
 CREATE TABLE IF NOT EXISTS `pieces` (
   `bonneref` int(11) NOT NULL,
   `coderef` int(11) NOT NULL,
@@ -3109,11 +3093,11 @@ CREATE TABLE IF NOT EXISTS `pieces` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `pieces`
+-- Contenu de la table `pieces`
 --
 
 INSERT INTO `pieces` (`bonneref`, `coderef`, `Designation`, `Quantite`, `prixUnit`) VALUES
-(4, 4, 'pol', 12, 1000),
+(4, 4, 'pol', 120, 2000),
 (14, 15, 'der', 60, 1000);
 
 -- --------------------------------------------------------
@@ -3122,16 +3106,15 @@ INSERT INTO `pieces` (`bonneref`, `coderef`, `Designation`, `Quantite`, `prixUni
 -- Structure de la table `solde`
 --
 
-DROP TABLE IF EXISTS `solde`;
 CREATE TABLE IF NOT EXISTS `solde` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Montant` double NOT NULL,
   `Date` date NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=214 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=214 ;
 
 --
--- Déchargement des données de la table `solde`
+-- Contenu de la table `solde`
 --
 
 INSERT INTO `solde` (`Identifiant`, `Montant`, `Date`) VALUES
@@ -3336,7 +3319,6 @@ INSERT INTO `solde` (`Identifiant`, `Montant`, `Date`) VALUES
 -- Structure de la table `utiljour`
 --
 
-DROP TABLE IF EXISTS `utiljour`;
 CREATE TABLE IF NOT EXISTS `utiljour` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `Login` varchar(50) NOT NULL,
@@ -3344,10 +3326,10 @@ CREATE TABLE IF NOT EXISTS `utiljour` (
   `Date_Ent` datetime NOT NULL,
   `Date_Sorti` datetime NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=471 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=471 ;
 
 --
--- Déchargement des données de la table `utiljour`
+-- Contenu de la table `utiljour`
 --
 
 INSERT INTO `utiljour` (`Identifiant`, `Login`, `Motdepasse`, `Date_Ent`, `Date_Sorti`) VALUES
@@ -3764,7 +3746,6 @@ INSERT INTO `utiljour` (`Identifiant`, `Login`, `Motdepasse`, `Date_Ent`, `Date_
 -- Structure de la table `venteau`
 --
 
-DROP TABLE IF EXISTS `venteau`;
 CREATE TABLE IF NOT EXISTS `venteau` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `bonneref` int(11) NOT NULL,
@@ -3777,7 +3758,7 @@ CREATE TABLE IF NOT EXISTS `venteau` (
   `Date` date NOT NULL,
   `Etat` varchar(50) NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -3785,7 +3766,6 @@ CREATE TABLE IF NOT EXISTS `venteau` (
 -- Structure de la table `ventegar`
 --
 
-DROP TABLE IF EXISTS `ventegar`;
 CREATE TABLE IF NOT EXISTS `ventegar` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `bonneref` int(11) NOT NULL,
@@ -3798,10 +3778,10 @@ CREATE TABLE IF NOT EXISTS `ventegar` (
   `Date` date NOT NULL,
   `Etat` varchar(50) NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=1221 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1221 ;
 
 --
--- Déchargement des données de la table `ventegar`
+-- Contenu de la table `ventegar`
 --
 
 INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Prix_unitaire`, `Quantite`, `Total`, `IDr`, `Date`, `Etat`) VALUES
@@ -3921,7 +3901,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (368, 19935, 35, 'garniture', 10000, 6, 60000, 360, '2018-09-21', 'facture'),
 (230, 380, 190, 'ganiture disc', 15000, 1, 15000, 243, '2018-08-08', 'pret'),
 (231, 19365, 65, 'garniture', 10000, 1, 10000, 244, '2018-08-08', 'facture'),
-(232, 19365, 65, 'garniture', 10000, 3, 30000, 245, '2018-08-08', 'pret'),
+(232, 19365, 65, 'garniture', 10000, 3, 30000, 245, '2019-08-10', 'facture'),
 (233, 19032, 32, 'garniture', 10000, 2, 20000, 246, '2018-08-08', 'pret'),
 (234, 19049, 49, 'garniture', 7500, 2, 15000, 247, '2018-08-09', 'facture'),
 (235, 350, 190, 'garnitur disc', 13000, 1, 13000, 248, '2018-08-09', 'facture'),
@@ -4193,7 +4173,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (619, 19187, 87, 'garniture', 9000, 1, 9000, 575, '2018-11-22', 'facture'),
 (620, 19934, 34, 'garniture', 6250, 2, 12500, 576, '2018-11-22', 'facture'),
 (621, 19935, 35, 'garniture', 6250, 2, 12500, 577, '2018-11-22', 'facture'),
-(622, 19487, 87, 'garniture', 10000, 4, 40000, 578, '2018-11-23', 'pret'),
+(622, 19487, 87, 'garniture', 10000, 4, 40000, 578, '2019-08-10', 'facture'),
 (623, 200, 135, 'garniture disc', 7000, 1, 7000, 579, '2018-11-23', 'facture'),
 (624, 19094, 94, 'garniture', 9000, 2, 18000, 580, '2018-11-24', 'facture'),
 (625, 200, 135, 'garniture disc', 5000, 1, 5000, 581, '2018-11-24', 'facture'),
@@ -4230,7 +4210,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (656, 19934, 34, 'garniture', 10000, 4, 40000, 611, '2018-12-01', 'facture'),
 (657, 19187, 87, 'garniture', 9000, 2, 18000, 612, '2018-12-01', 'facture'),
 (658, 19657, 57, 'ganiture', 18000, 1, 18000, 613, '2018-12-01', 'facture'),
-(659, 19657, 57, 'ganiture', 2000, 4, 8000, 614, '2018-12-01', 'pret'),
+(659, 19657, 57, 'ganiture', 2000, 4, 8000, 614, '2019-08-10', 'facture'),
 (660, 30400, 430, 'disques comples ', 35000, 1, 35000, 615, '2018-12-04', 'facture'),
 (661, 380, 190, 'ganiture disc', 17000, 1, 17000, 616, '2018-12-03', 'facture'),
 (662, 19657, 57, 'ganiture', 17000, 1, 17000, 617, '2018-12-03', 'facture'),
@@ -4372,7 +4352,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (799, 19187, 87, 'garniture', 10000, 4, 40000, 741, '2018-12-31', 'facture'),
 (800, 212, 140, 'garniture disc', 5000, 1, 5000, 742, '2018-12-31', 'facture'),
 (801, 420, 420, 'garniture', 20000, 1, 20000, 743, '2019-01-02', 'facture'),
-(802, 19934, 34, 'garniture', 10000, 1, 10000, 744, '2018-12-31', 'pret'),
+(802, 19934, 34, 'garniture', 10000, 1, 10000, 744, '2019-08-10', 'facture'),
 (803, 19187, 87, 'garniture', 10000, 8, 80000, 745, '2019-01-02', 'facture'),
 (804, 420, 420, 'garniture', 20000, 1, 20000, 746, '2019-01-02', 'facture'),
 (805, 420, 420, 'garniture', 17000, 1, 17000, 747, '2019-01-02', 'facture'),
@@ -4466,9 +4446,9 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (898, 19657, 57, 'ganiture', 7000, 1, 7000, 827, '2019-01-18', 'facture'),
 (940, 250, 160, 'garniture', 12000, 1, 12000, 864, '2019-01-26', 'facture'),
 (900, 19657, 57, 'ganiture', 10000, 4, 40000, 829, '2019-03-31', 'facture'),
-(901, 30400, 430, 'disques comples ', 35000, 1, 35000, 830, '2019-01-18', 'pret'),
-(902, 19036, 36, 'garniture', 10000, 4, 40000, 831, '2019-01-21', 'facture');
+(901, 30400, 430, 'disques comples ', 35000, 1, 35000, 830, '2019-08-10', 'facture');
 INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Prix_unitaire`, `Quantite`, `Total`, `IDr`, `Date`, `Etat`) VALUES
+(902, 19036, 36, 'garniture', 10000, 4, 40000, 831, '2019-01-21', 'facture'),
 (903, 19657, 57, 'ganiture', 5000, 4, 20000, 832, '2019-01-28', 'facture'),
 (904, 430, 30, 'garniture', 18000, 1, 18000, 833, '2019-01-19', 'facture'),
 (905, 30400, 430, 'disques comples ', 60000, 1, 60000, 834, '2019-01-19', 'facture'),
@@ -4518,7 +4498,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (950, 19094, 94, 'garniture', 10000, 4, 40000, 871, '2019-01-30', 'facture'),
 (951, 19365, 65, 'garniture', 6250, 2, 12500, 871, '2019-01-30', 'facture'),
 (952, 19036, 36, 'garniture', 6250, 2, 12500, 872, '2019-01-30', 'facture'),
-(953, 19657, 57, 'ganiture', 10000, 3, 30000, 873, '2019-01-28', 'pret'),
+(953, 19657, 57, 'ganiture', 10000, 3, 30000, 873, '2019-08-10', 'facture'),
 (954, 19488, 88, 'garniture', 6250, 2, 12500, 874, '2019-01-28', 'facture'),
 (955, 19187, 87, 'garniture', 10000, 2, 20000, 875, '2019-01-29', 'facture'),
 (956, 19187, 87, 'garniture', 10000, 2, 20000, 876, '2019-01-29', 'facture'),
@@ -4540,13 +4520,12 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (972, 19657, 57, 'ganiture', 3250, 4, 13000, 891, '2019-01-31', 'facture'),
 (973, 400, 200, 'garniture disc', 17000, 1, 17000, 892, '2019-01-31', 'facture'),
 (974, 19934, 34, 'garniture', 7500, 4, 30000, 893, '2019-01-31', 'pret'),
-(975, 19487, 87, 'garniture', 8750, 2, 17500, 894, '2019-01-31', 'pret'),
 (976, 19657, 57, 'ganiture', 8000, 1, 8000, 895, '2019-01-31', 'facture'),
 (977, 19657, 57, 'ganiture', 10000, 2, 20000, 465, '2019-02-01', 'pret'),
 (978, 250, 160, 'garniture', 10000, 1, 10000, 896, '2019-02-01', 'facture'),
 (979, 19036, 36, 'garniture', 6250, 4, 25000, 897, '2019-02-01', 'facture'),
 (980, 19187, 87, 'garniture', 6250, 2, 12500, 898, '2019-02-01', 'facture'),
-(981, 19657, 57, 'ganiture', 6000, 1, 6000, 899, '2019-02-01', 'facture'),
+(981, 19657, 57, 'ganiture', 6000, 1, 6000, 899, '2019-08-10', 'facture'),
 (982, 19657, 57, 'ganiture', 5000, 1, 5000, 900, '2019-02-01', 'facture'),
 (983, 19036, 36, 'garniture', 9500, 2, 19000, 901, '2019-03-21', 'facture'),
 (984, 19032, 32, 'garniture', 15000, 1, 15000, 902, '2019-03-21', 'facture'),
@@ -4570,9 +4549,9 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1002, 19036, 36, 'garniture', 6250, 4, 25000, 919, '2019-02-05', 'facture'),
 (1003, 19032, 32, 'garniture', 10000, 2, 20000, 920, '2019-02-26', 'facture'),
 (1004, 19032, 32, 'garniture', 10000, 2, 20000, 920, '2019-02-26', 'facture'),
-(1005, 19036, 36, 'garniture', 6250, 2, 12500, 921, '2019-02-05', 'pret'),
+(1005, 19036, 36, 'garniture', 6250, 2, 12500, 921, '2019-08-10', 'facture'),
 (1006, 19657, 57, 'ganiture', 3000, 12, 36000, 922, '2019-02-06', 'facture'),
-(1007, 19488, 88, 'garniture', 10000, 8, 80000, 923, '2019-02-06', 'facture'),
+(1007, 19488, 88, 'garniture', 10000, 8, 80000, 923, '2019-08-10', 'facture'),
 (1008, 19032, 32, 'garniture', 9000, 6, 54000, 924, '2019-02-06', 'facture'),
 (1009, 430, 30, 'garniture', 20000, 1, 20000, 925, '2019-02-07', 'facture'),
 (1010, 420, 420, 'garniture', 20000, 1, 20000, 926, '2019-02-05', 'facture'),
@@ -4583,7 +4562,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1015, 19657, 57, 'ganiture', 15000, 1, 15000, 931, '2019-02-07', 'facture'),
 (1016, 19657, 57, 'ganiture', 10000, 2, 20000, 932, '2019-02-07', 'facture'),
 (1017, 19187, 87, 'garniture', 9000, 2, 18000, 933, '2019-02-07', 'facture'),
-(1018, 420, 420, 'garniture', 20000, 1, 20000, 152, '2019-02-07', 'pret'),
+(1018, 420, 420, 'garniture', 20000, 1, 20000, 152, '2019-08-10', 'facture'),
 (1019, 420, 420, 'garniture', 20000, 2, 40000, 153, '2019-02-07', 'pret'),
 (1020, 19657, 57, 'ganiture', 7500, 6, 45000, 934, '2019-02-08', 'facture'),
 (1021, 19657, 57, 'ganiture', 7500, 4, 30000, 935, '2019-02-08', 'facture'),
@@ -4623,7 +4602,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1055, 420, 420, 'garniture', 20000, 1, 20000, 966, '2019-03-29', 'facture'),
 (1056, 420, 420, 'garniture', 20000, 1, 20000, 967, '2019-02-18', 'facture'),
 (1057, 420, 420, 'garniture', 20000, 1, 20000, 968, '2019-02-19', 'facture'),
-(1058, 30400, 430, 'disques comples ', 30000, 1, 30000, 969, '2019-02-19', 'facture'),
+(1058, 30400, 430, 'disques comples ', 30000, 1, 30000, 969, '2019-08-10', 'facture'),
 (1059, 215, 135, 'garniture disc', 6000, 1, 6000, 970, '2019-02-19', 'facture'),
 (1060, 215, 135, 'garniture disc', 6000, 1, 6000, 971, '2019-02-19', 'facture'),
 (1061, 215, 135, 'garniture disc', 5000, 1, 5000, 972, '2019-02-19', 'facture'),
@@ -4634,7 +4613,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1066, 19657, 57, 'ganiture', 10000, 1, 10000, 977, '2019-02-20', 'facture'),
 (1067, 420, 420, 'garniture', 20000, 1, 20000, 978, '2019-02-20', 'facture'),
 (1068, 19036, 36, 'garniture', 10000, 2, 20000, 979, '2019-02-20', 'facture'),
-(1069, 19187, 87, 'garniture', 10000, 2, 20000, 980, '2019-02-20', 'facture'),
+(1069, 19187, 87, 'garniture', 10000, 2, 20000, 980, '2019-08-10', 'facture'),
 (1075, 19487, 87, 'garniture', 15000, 2, 30000, 415, '2019-02-21', 'pret'),
 (1071, 420, 420, 'garniture', 20000, 2, 40000, 981, '2019-02-20', 'pret'),
 (1072, 400, 200, 'garniture disc', 17000, 1, 17000, 982, '2019-02-21', 'facture'),
@@ -4648,7 +4627,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1083, 420, 420, 'garniture', 20000, 1, 20000, 991, '2019-02-25', 'facture'),
 (1084, 215, 135, 'garniture disc', 6000, 1, 6000, 992, '2019-02-25', 'facture'),
 (1085, 19657, 57, 'ganiture', 4000, 1, 4000, 993, '2019-02-25', 'facture'),
-(1086, 19657, 57, 'ganiture', 9000, 8, 72000, 994, '2019-02-26', 'pret'),
+(1086, 19657, 57, 'ganiture', 9000, 8, 72000, 994, '2019-08-10', 'facture'),
 (1087, 19049, 49, 'garniture', 6250, 4, 25000, 995, '2019-02-26', 'facture'),
 (1088, 19657, 57, 'ganiture', 10000, 4, 40000, 2308, '2019-02-26', 'pret'),
 (1089, 19036, 36, 'garniture', 10000, 12, 120000, 996, '2019-03-14', 'facture'),
@@ -4662,7 +4641,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1097, 19657, 57, 'ganiture', 15000, 2, 30000, 1001, '2019-02-28', 'facture'),
 (1098, 19657, 57, 'ganiture', 10000, 1, 10000, 1002, '2019-03-04', 'facture'),
 (1099, 19657, 57, 'ganiture', 7000, 1, 7000, 1003, '2019-03-05', 'facture'),
-(1100, 19657, 57, 'ganiture', 2500, 4, 10000, 1004, '2019-02-28', 'pret'),
+(1100, 19657, 57, 'ganiture', 2500, 4, 10000, 1004, '2019-08-10', 'facture'),
 (1101, 19657, 57, 'ganiture', 2000, 4, 8000, 1005, '2019-03-01', 'facture'),
 (1102, 19365, 65, 'garniture', 10000, 8, 80000, 1006, '2019-03-04', 'facture'),
 (1103, 19657, 57, 'ganiture', 5000, 1, 5000, 1007, '2019-02-28', 'pret'),
@@ -4671,25 +4650,22 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1106, 19657, 57, 'ganiture', 17000, 1, 17000, 1010, '2019-03-01', 'facture'),
 (1107, 19657, 57, 'ganiture', 15000, 1, 15000, 1011, '2019-03-01', 'facture'),
 (1108, 430, 30, 'garniture', 20000, 1, 20000, 1012, '2019-03-01', 'pret'),
-(1109, 430, 30, 'garniture', 20000, 1, 20000, 1013, '2019-03-01', 'facture'),
-(1110, 380, 190, 'ganiture disc', 8000, 1, 8000, 1014, '2019-03-01', 'pret'),
+(1109, 430, 30, 'garniture', 20000, 1, 20000, 1013, '2019-08-10', 'facture'),
+(1110, 380, 190, 'ganiture disc', 8000, 1, 8000, 1014, '2019-08-10', 'facture'),
 (1111, 19488, 88, 'garniture', 10000, 2, 20000, 1015, '2019-03-02', 'facture'),
 (1112, 19187, 87, 'garniture', 15000, 1, 15000, 1016, '2019-03-04', 'facture'),
 (1113, 19187, 87, 'garniture', 10000, 1, 10000, 1017, '2019-03-04', 'facture'),
-(1114, 19487, 87, 'garniture', 10000, 4, 40000, 1018, '2019-03-04', 'pret'),
-(1115, 400, 200, 'garniture disc', 20000, 2, 40000, 1019, '2019-03-04', 'pret'),
 (1116, 19049, 49, 'garniture', 10000, 4, 40000, 1020, '2019-03-05', 'facture'),
 (1117, 19049, 49, 'garniture', 10000, 4, 40000, 1021, '2019-03-30', 'facture'),
-(1118, 430, 30, 'garniture', 20000, 1, 20000, 1022, '2019-03-05', 'pret'),
 (1119, 420, 420, 'garniture', 20000, 1, 20000, 170, '2019-03-05', 'pret'),
 (1120, 19049, 49, 'garniture', 0, 1, 0, 1023, '2019-03-05', 'facture'),
 (1121, 19036, 36, 'garniture', 19000, 2, 38000, 1024, '2019-03-05', 'facture'),
 (1122, 19487, 87, 'garniture', 9500, 2, 19000, 1025, '2019-03-05', 'facture'),
 (1123, 19032, 32, 'garniture', 10000, 4, 40000, 1026, '2019-03-07', 'facture'),
 (1124, 19657, 57, 'ganiture', 10000, 2, 20000, 1027, '2019-03-08', 'facture'),
-(1125, 19187, 87, 'garniture', 10000, 8, 80000, 1028, '2019-03-06', 'pret'),
+(1125, 19187, 87, 'garniture', 10000, 8, 80000, 1028, '2019-08-10', 'facture'),
 (1126, 19657, 57, 'ganiture', 10000, 6, 60000, 1029, '2019-03-31', 'facture'),
-(1127, 420, 420, 'garniture', 30000, 1, 30000, 1030, '2019-03-07', 'pret'),
+(1127, 420, 420, 'garniture', 30000, 1, 30000, 1030, '2019-08-10', 'facture'),
 (1128, 19036, 36, 'garniture', 10000, 2, 20000, 1031, '2019-03-08', 'facture'),
 (1129, 19036, 36, 'garniture', 15000, 2, 30000, 1032, '2019-03-08', 'facture'),
 (1130, 250, 160, 'garniture', 7000, 1, 7000, 1033, '2019-03-08', 'facture'),
@@ -4703,7 +4679,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1138, 19036, 36, 'garniture', 12500, 2, 25000, 1041, '2019-03-11', 'facture'),
 (1139, 19657, 57, 'ganiture', 10000, 2, 20000, 1042, '2019-03-11', 'facture'),
 (1140, 19187, 87, 'garniture', 0, 2, 0, 1043, '2019-03-11', 'facture'),
-(1141, 19036, 36, 'garniture', 10000, 12, 120000, 1044, '2019-03-12', 'pret'),
+(1141, 19036, 36, 'garniture', 10000, 12, 120000, 1044, '2019-08-10', 'facture'),
 (1142, 430, 30, 'garniture', 5000, 3, 15000, 209, '2019-03-13', 'pret'),
 (1143, 19365, 65, 'garniture', 9000, 4, 36000, 1045, '2019-03-13', 'facture'),
 (1144, 380, 190, 'ganiture disc', 15000, 1, 15000, 1046, '2019-03-13', 'facture'),
@@ -4739,12 +4715,12 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1177, 400, 200, 'garniture disc', 20000, 1, 20000, 1077, '2019-03-19', 'facture'),
 (1178, 19657, 57, 'ganiture', 6000, 1, 6000, 1078, '2019-03-19', 'facture'),
 (1179, 19657, 57, 'ganiture', 8000, 1, 8000, 1079, '2019-03-19', 'facture'),
-(1180, 19036, 36, 'garniture', 10000, 1, 10000, 1080, '2019-03-19', 'pret'),
+(1180, 19036, 36, 'garniture', 10000, 1, 10000, 1080, '2019-08-10', 'facture'),
 (1181, 19657, 57, 'ganiture', 10000, 4, 40000, 1081, '2019-03-20', 'facture'),
 (1182, 330, 190, 'garniture disc', 13000, 1, 13000, 1082, '2019-03-20', 'facture'),
 (1183, 19187, 87, 'garniture', 6250, 2, 12500, 1083, '2019-03-20', 'facture'),
 (1184, 380, 190, 'ganiture disc', 15000, 1, 15000, 1084, '2019-03-21', 'facture'),
-(1185, 400, 200, 'garniture disc', 17000, 1, 17000, 1085, '2019-03-20', 'pret'),
+(1185, 400, 200, 'garniture disc', 17000, 1, 17000, 1085, '2019-03-20', 'facture'),
 (1186, 19369, 69, 'garniture', 10000, 10, 100000, 1086, '2019-03-21', 'facture'),
 (1187, 380, 190, 'ganiture disc', 15000, 1, 15000, 1087, '2019-03-21', 'facture'),
 (1188, 19187, 87, 'garniture', 10000, 2, 20000, 470, '2019-03-21', 'pret'),
@@ -4770,9 +4746,7 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 (1208, 19657, 57, 'ganiture', 10000, 6, 60000, 1104, '2019-03-28', 'facture'),
 (1209, 430, 30, 'garniture', 20000, 1, 20000, 1105, '2019-03-28', 'facture'),
 (1210, 250, 160, 'garniture', 8000, 1, 8000, 1106, '2019-03-28', 'facture'),
-(1211, 19657, 57, 'ganiture', 10000, 2, 20000, 1107, '2019-03-29', 'facture'),
-(1212, 430, 30, 'garniture', 17000, 1, 17000, 1108, '2019-03-29', 'pret'),
-(1213, 350, 190, 'garnitur disc', 15000, 1, 15000, 1109, '2019-03-29', 'pret'),
+(1212, 430, 30, 'garniture', 17000, 1, 17000, 1108, '2019-08-10', 'facture'),
 (1214, 430, 30, 'garniture', 20000, 1, 20000, 1110, '2019-03-30', 'facture'),
 (1215, 430, 30, 'garniture', 20000, 1, 20000, 1111, '2019-03-30', 'facture'),
 (1216, 350, 190, 'garnitur disc', 13000, 1, 13000, 1112, '2019-03-30', 'facture'),
@@ -4787,7 +4761,6 @@ INSERT INTO `ventegar` (`Identifiant`, `bonneref`, `coderef`, `Designation`, `Pr
 -- Structure de la table `ventepieces`
 --
 
-DROP TABLE IF EXISTS `ventepieces`;
 CREATE TABLE IF NOT EXISTS `ventepieces` (
   `Identifiant` int(11) NOT NULL AUTO_INCREMENT,
   `bonneref` int(11) NOT NULL,
@@ -4800,8 +4773,7 @@ CREATE TABLE IF NOT EXISTS `ventepieces` (
   `Date` date NOT NULL,
   `Etat` varchar(50) NOT NULL,
   PRIMARY KEY (`Identifiant`)
-) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
-COMMIT;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=91 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
