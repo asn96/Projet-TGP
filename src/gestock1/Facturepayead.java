@@ -177,7 +177,7 @@ public class Facturepayead extends JFrame{
             
             Statement a = c1.createStatement();
             
-            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='"+datfr1+"' AND MONTH(Date)='"+datfr2+"' AND DAYOFMONTH(Date)='"+datfr3+"' AND Etat='"+1+"') ORDER BY Date DESC");
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(datePayer)='"+datfr1+"' AND MONTH(datePayer)='"+datfr2+"' AND DAYOFMONTH(datePayer)='"+datfr3+"' AND Etat='"+1+"') ORDER BY datePayer DESC");
             
             
             
@@ -189,7 +189,7 @@ public class Facturepayead extends JFrame{
             
             String prenomp;
             
-            String datePayer;
+            String datePayer, datePret;
            
        
             while(b.next()){
@@ -204,9 +204,11 @@ public class Facturepayead extends JFrame{
                
                datePayer = b.getString("datePayer");
                
+               datePret = b.getString("Date");
+               
                fini=fini+mon;
           
-               ligne(refp, mon, dat, datePayer, nomp, prenomp);
+               ligne(refp, mon, datePret, datePayer, nomp, prenomp);
                
       }
                  ligne1("Total", fini, "");
@@ -435,7 +437,7 @@ public class Facturepayead extends JFrame{
             
             Statement a = c1.createStatement();
             
-            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='"+datfr1+"' AND MONTH(Date)='"+datfr2+"' AND DAYOFMONTH(Date)='"+datfr3+"' AND Etat='"+1+"') ORDER BY Date DESC");
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(datePayer)='"+datfr1+"' AND MONTH(datePayer)='"+datfr2+"' AND DAYOFMONTH(datePayer)='"+datfr3+"' AND Etat='"+1+"') ORDER BY datePayer DESC");
           
             int refp;
             
@@ -504,7 +506,7 @@ public class Facturepayead extends JFrame{
             
             Statement a = c1.createStatement();
             
-            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='"+datfr1+"' AND MONTH(Date)='"+datfr2+"' AND Etat='"+1+"') ORDER BY Date DESC");
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(datePayer)='"+datfr1+"' AND MONTH(datePayer)='"+datfr2+"' AND Etat='"+1+"') ORDER BY datePayer DESC");
           
             int refp;
             
@@ -575,7 +577,7 @@ public class Facturepayead extends JFrame{
             
             Statement a = c1.createStatement();
             
-            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='"+datfr1+"'  AND Etat='"+1+"') ORDER BY Date DESC");
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(datePayer)='"+datfr1+"'  AND Etat='"+1+"') ORDER BY datePayer DESC");
           
             int refp;
             

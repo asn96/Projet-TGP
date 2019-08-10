@@ -139,7 +139,7 @@ public class Facturepayesec extends JFrame{
             
             Statement a = c1.createStatement();
             
-            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='"+datfr1+"' AND MONTH(Date)='"+datfr2+"' AND DAYOFMONTH(Date)='"+datfr3+"' AND Etat='"+1+"') ORDER BY Date DESC");
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(datePayer)='"+datfr1+"' AND MONTH(datePayer)='"+datfr2+"' AND DAYOFMONTH(datePayer)='"+datfr3+"' AND Etat='"+1+"') ORDER BY datePayer DESC");
           
             int refp;
             
@@ -148,6 +148,8 @@ public class Facturepayesec extends JFrame{
             String nomp;
             
             String prenomp;
+            
+            String datePret, datePayer; 
            
        
             while(b.next()){
@@ -160,9 +162,13 @@ public class Facturepayesec extends JFrame{
                
                prenomp = b.getString("Prenom");
                
+               datePret = b.getString("Date");
+               
+               datePayer = b.getString("datePayer");
+               
                fini=fini+mon;
           
-               ligne(refp, mon, dat, nomp, prenomp);
+               ligne(refp, mon, datePret, datePayer, nomp, prenomp);
                
       }
                  ligne1("Total", fini, "");
@@ -213,7 +219,8 @@ public class Facturepayesec extends JFrame{
         
         d.addColumn("Reference");
         d.addColumn("Montant");
-        d.addColumn("Date");
+        d.addColumn("Date Pret");
+        d.addColumn("Date Paiement");
         d.addColumn("Nom");
         d.addColumn("Prenom");
        
@@ -221,9 +228,9 @@ public class Facturepayesec extends JFrame{
 
     }
     
-  public void ligne(int a, double b, String c , String nom, String prenom){
+  public void ligne(int a, double b, String c, String datePayer, String nom, String prenom){
         
-                  Object[] line ={a, b, c, nom, prenom};
+                  Object[] line ={a, b, c, datePayer, nom, prenom};
                   
                   d.addRow(line);
      }

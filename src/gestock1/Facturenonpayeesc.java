@@ -326,7 +326,7 @@ public class Facturenonpayeesc extends JFrame{
             
             b.updateInt("Etat", 1);
             
-            b.updateString("Date", dat2);
+            b.updateString("datePayer", dat2);
             
             b.updateRow();
             
