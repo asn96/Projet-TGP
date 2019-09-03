@@ -19,8 +19,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class StockDisponibleGar extends JFrame implements Runnable{
-     private javax.swing.JButton jButton1;
+public class StockDisponibleGar extends JFrame implements Runnable {
+
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -40,22 +41,22 @@ public class StockDisponibleGar extends JFrame implements Runnable{
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     DefaultTableModel d;
-    
-    public StockDisponibleGar(){
-    
+
+    public StockDisponibleGar() {
+
         initComponents();
-        
-        Thread tr=null;
-        
-        if(tr==null){
-            
+
+        Thread tr = null;
+
+        if (tr == null) {
+
             tr = new Thread(this);
-            
+
             tr.start();
         }
     }
-    
-     private void initComponents() {
+
+    private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -81,23 +82,22 @@ public class StockDisponibleGar extends JFrame implements Runnable{
         getContentPane().setLayout(null);
         setTitle("GESTOCK");
         setVisible(true);
-         setResizable(false);
-         setPreferredSize(new Dimension(813, 670));
+        setResizable(false);
+        setPreferredSize(new Dimension(813, 670));
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        
+
         jScrollPane1.setViewportView(jTable1);
-             
+
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 170, 770, 330);
-        
+
         jTable1.setBackground(new Color(0, 153, 153));
-        
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setLayout(null);
-        
+
         jLabel1.setIcon(new javax.swing.ImageIcon("pieces\\logo.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
@@ -143,8 +143,6 @@ public class StockDisponibleGar extends JFrame implements Runnable{
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(null);
 
-        
-        
         jPanel9.setBackground(new java.awt.Color(0, 153, 153));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel9.setLayout(null);
@@ -200,73 +198,62 @@ public class StockDisponibleGar extends JFrame implements Runnable{
         jPanel10.setBounds(790, 170, 20, 430);
 
         pack();
-         setLocationRelativeTo(null);
-         
-         jButton1.addActionListener(new Quitter());
-         jButton2.addActionListener(new Rechercher());
-         jButton3.addActionListener(new actu());
-         jButton5.addActionListener(new Imprimer());
-         jButton4.addActionListener(new Modifier());
-         
-         CreateColonne();
-         
-            try{
+        setLocationRelativeTo(null);
+
+        jButton1.addActionListener(new Quitter());
+        jButton2.addActionListener(new Rechercher());
+        jButton3.addActionListener(new actu());
+        jButton5.addActionListener(new Imprimer());
+        jButton4.addActionListener(new Modifier());
+
+        CreateColonne();
+
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-              
-            String url= "jdbc:mysql://localhost:3306/gestion";
-            
-            String user="root"; 
-            
-            String pass="";
-            
-            Connection c1 =DriverManager.getConnection(url, user, pass);
-            
+
+            String url = "jdbc:mysql://localhost:3306/gestion";
+
+            String user = "root";
+
+            String pass = "";
+
+            Connection c1 = DriverManager.getConnection(url, user, pass);
+
             System.out.println("Connection bien etablie");
-            
+
             Statement a = c1.createStatement();
-            
+
             ResultSet b = a.executeQuery("SELECT * FROM Garnitures ORDER BY bonneref");
-          
-           int h;
-           
-           int g; 
-           
-           String k;
-           
-           int p;
-           
-        
-            
-       
-            
-            while(b.next()){
-                    
-          h=b.getInt("bonneref");
-          
-          g=b.getInt("coderef");
-          
-          k=b.getString("Designation");
-          
-          p=b.getInt("Quantite");
-          
-         
-          ligne(h, g, k, p);
-                
-                
-               
-    
-            
-      }
-        
-            
-         
-        }
-        catch(Exception ex){
+
+            int h;
+
+            int g;
+
+            String k;
+
+            int p;
+
+            while (b.next()) {
+
+                h = b.getInt("bonneref");
+
+                g = b.getInt("coderef");
+
+                k = b.getString("Designation");
+
+                p = b.getInt("Quantite");
+
+                ligne(h, g, k, p);
+
+            }
+
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
-    }  
-     public static void main(String args[]) {
-   
+    }
+
+    public static void main(String args[]) {
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -292,313 +279,285 @@ public class StockDisponibleGar extends JFrame implements Runnable{
             }
         });
     }
-         public void CreateColonne(){
-        
-        d=(DefaultTableModel) jTable1.getModel();
-        
-        
+
+    public void CreateColonne() {
+
+        d = (DefaultTableModel) jTable1.getModel();
+
         d.addColumn("Bonne Reference");
         d.addColumn("Reference Code");
         d.addColumn("Designation");
         d.addColumn("Quantite");
-   
-      
 
-  
-       
-        
     }
-         public void ligne(int e , int f , String g , int k){
-        
-         Object[] line ={e, f, g, k};
-        
-         d.addRow(line);
+
+    public void ligne(int e, int f, String g, int k) {
+
+        Object[] line = {e, f, g, k};
+
+        d.addRow(line);
     }
-         
-         @Override
+
+    @Override
     public void run() {
-        
-              try{
+
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-              
-            String url= "jdbc:mysql://localhost:3306/gestion";
-            
-            String user="root"; 
-            
-            String pass="";
-            
-            Connection c1 =DriverManager.getConnection(url, user, pass);
-            
+
+            String url = "jdbc:mysql://localhost:3306/gestion";
+
+            String user = "root";
+
+            String pass = "";
+
+            Connection c1 = DriverManager.getConnection(url, user, pass);
+
             System.out.println("Connection bien etablie");
-            
+
             Statement a = c1.createStatement();
-            
+
             ResultSet b = a.executeQuery("SELECT * FROM garnitures ORDER BY bonneref");
-          
-           
-           int p = 0;
-           
-           int[] tab = new int[jTable1.getRowCount()];
-           
-           String[] tab1 = new String[jTable1.getRowCount()];
-        
-           int i=0;
-           
-            while(b.next()){
-                    
+
+            int p = 0;
+
+            int[] tab = new int[jTable1.getRowCount()];
+
+            String[] tab1 = new String[jTable1.getRowCount()];
+
+            int i = 0;
+
+            while (b.next()) {
+
                 tab[i] = b.getInt("Quantite");
-                
+
                 tab1[i] = b.getString("bonneref");
-                
-                i=i+1;
-     
-             }
-            i=0;
-            while(true){
-                
-                if(tab[i]<=4){
-                    
+
+                i = i + 1;
+
+            }
+            i = 0;
+            while (true) {
+
+                if (tab[i] <= 4) {
+
                     JOptionPane pa = new JOptionPane();
-                    
+
                     pa.setBackground(Color.red);
-                    
-                    pa.showMessageDialog(null, "La quantite de la  reference "+tab1[i]+" est inferieur a 4 ", "GESTOCK", HEIGHT);
-                    
-                    
+
+                    pa.showMessageDialog(null, "La quantite de la  reference " + tab1[i] + " est inferieure a 4 ", "GESTOCK", HEIGHT);
+
                 }
-                i=i+1;
-                
+                i = i + 1;
+
                 try {
-                    
+
                     Thread.sleep(1000);
                 } catch (Exception e) {
                 }
             }
-        
-            
-         
-        }
-        catch(Exception ex){
+
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
-       
 
     }
-   
-      class Quitter implements ActionListener {
-           
-            public void actionPerformed(ActionEvent e){
-                
-                setVisible(false);
-                
-                pageadmin p = new pageadmin();
-            }
-       
-       
-       }
-          
-      class Rechercher implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
-                int id=0;
-                
-               int id2=0;
-               
-               String st="";
-               
-               int qt=0;
-            
-                 JOptionPane ti = new JOptionPane();
-                 String hosp = ti.showInputDialog(null, "Veuillez Entrer la bonne reference!", "Information !",JOptionPane.QUESTION_MESSAGE);
-                 int fp=0;
-                 try {
-                     fp=Integer.parseInt(hosp);
-                    
-                } catch (Exception elo) {
-                }
-               
-                     try{
-            Class.forName("com.mysql.jdbc.Driver");
-              
-            String url= "jdbc:mysql://localhost:3306/gestion";
-            
-            String user="root"; 
-            
-            String pass="";
-            
-            Connection c1 =DriverManager.getConnection(url, user, pass);
-            
-            System.out.println("Connection bien etablie");
-            
-            Statement a = c1.createStatement();
-            
-            ResultSet b = a.executeQuery("SELECT * FROM Garnitures WHERE bonneref='"+fp+"'");
-            
-            b.first();
-            
-            id=b.getInt("bonneref");
-            
-            id2=b.getInt("coderef");
-            
-            st = b.getString("Designation");
-            
-            qt = b.getInt("Quantite");
-            
-            
-                     }catch(Exception ex){}
-            
-                     if(id==0){
-                       JOptionPane jop1 = new JOptionPane();
-                       jop1.showMessageDialog(null,"Aucune information", "GESTOCK",JOptionPane.INFORMATION_MESSAGE);
-                     
-                     }
-                     else{
-                       JOptionPane jop1 = new JOptionPane();
-                       jop1.showMessageDialog(null,"bonne reference:\t\t"+id+"\n"+"code reference:\t\t"+id2+"\n"+"Designation:\t\t"+st+"\n"+"Quantite:\t\t"+qt+"\n", "Information",JOptionPane.INFORMATION_MESSAGE);
-                     
-                       id=0;
-                     }
-                     
-            }
-            
-            
-      }
-      
-      
-       class actu implements ActionListener {
+    class Quitter implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
-              int n=d.getRowCount();
-                for (int i = n-1; i >=0; --i) {
-                   d.removeRow(i);
-                }
-                
-                              try{
-            Class.forName("com.mysql.jdbc.Driver");
-              
-            String url= "jdbc:mysql://localhost:3306/gestion";
-            
-            String user="root"; 
-            
-            String pass="";
-            
-            Connection c1 =DriverManager.getConnection(url, user, pass);
-            
-            System.out.println("Connection bien etablie");
-            
-            Statement a = c1.createStatement();
-            
-            ResultSet b = a.executeQuery("SELECT * FROM Garnitures ORDER BY bonneref");
-        
-            int i1;
-            
-            int i2;
-            
-            String i3;
-            
-            int i4;
-           
-            while(b.next()){
-                    
-          i1=b.getInt("bonneref");
-          
-          i2=b.getInt("coderef");
-          
-          i3=b.getString("Designation");
-          
-          i4=b.getInt("Quantite");
-          
-           
-          ligne(i1, i2, i3, i4);
-                
-                
-               
-       
-            
-      }
-        
-            
-         
+        public void actionPerformed(ActionEvent e) {
+
+            setVisible(false);
+
+            pageadmin p = new pageadmin();
         }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
-    
-}            
-    
-       
- 
-  }
-       
-     class Imprimer implements ActionListener {
-            
-       
-            public void actionPerformed(ActionEvent e){
-                
-                MessageFormat hed = new MessageFormat("Liste des Garnitures disponibles");
-                
-                 MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
-                try{
-                    jTable1.print(JTable.PrintMode.FIT_WIDTH, hed, hed1);
-                }
-                catch(Exception l){
-                    
-                    System.out.println("Erreur d'impression");
-                }
-   
-   
+
+    }
+
+    class Rechercher implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            int id = 0;
+
+            int id2 = 0;
+
+            String st = "";
+
+            int qt = 0;
+
+            JOptionPane ti = new JOptionPane();
+            String hosp = ti.showInputDialog(null, "Veuillez Entrer la bonne reference!", "Information !", JOptionPane.QUESTION_MESSAGE);
+            int fp = 0;
+            try {
+                fp = Integer.parseInt(hosp);
+
+            } catch (Exception elo) {
             }
-            
-   }
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String url = "jdbc:mysql://localhost:3306/gestion";
+
+                String user = "root";
+
+                String pass = "";
+
+                Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                System.out.println("Connection bien etablie");
+
+                Statement a = c1.createStatement();
+
+                ResultSet b = a.executeQuery("SELECT * FROM Garnitures WHERE bonneref='" + fp + "'");
+
+                b.first();
+
+                id = b.getInt("bonneref");
+
+                id2 = b.getInt("coderef");
+
+                st = b.getString("Designation");
+
+                qt = b.getInt("Quantite");
+
+            } catch (Exception ex) {
+            }
+
+            if (id == 0) {
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Aucune information", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "bonne reference:\t\t" + id + "\n" + "code reference:\t\t" + id2 + "\n" + "Designation:\t\t" + st + "\n" + "Quantite:\t\t" + qt + "\n", "Information", JOptionPane.INFORMATION_MESSAGE);
+
+                id = 0;
+            }
+
+        }
+
+    }
+
+    class actu implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            int n = d.getRowCount();
+            for (int i = n - 1; i >= 0; --i) {
+                d.removeRow(i);
+            }
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String url = "jdbc:mysql://localhost:3306/gestion";
+
+                String user = "root";
+
+                String pass = "";
+
+                Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                System.out.println("Connection bien etablie");
+
+                Statement a = c1.createStatement();
+
+                ResultSet b = a.executeQuery("SELECT * FROM Garnitures ORDER BY bonneref");
+
+                int i1;
+
+                int i2;
+
+                String i3;
+
+                int i4;
+
+                while (b.next()) {
+
+                    i1 = b.getInt("bonneref");
+
+                    i2 = b.getInt("coderef");
+
+                    i3 = b.getString("Designation");
+
+                    i4 = b.getInt("Quantite");
+
+                    ligne(i1, i2, i3, i4);
+
+                }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+        }
+
+    }
+
+    class Imprimer implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            MessageFormat hed = new MessageFormat("Liste des Garnitures disponibles");
+
+            MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
+            try {
+                jTable1.print(JTable.PrintMode.FIT_WIDTH, hed, hed1);
+            } catch (Exception l) {
+
+                System.out.println("Erreur d'impression");
+            }
+
+        }
+
+    }
+
     class Modifier implements ActionListener {
-            
-       
-            public void actionPerformed(ActionEvent e){
-                
-                int n = jTable1.getSelectedRow();
-                
-                Object ob = d.getValueAt(n, 0);
-                
-                Object ob1 = d.getValueAt(n, 3);
-                
-                Object ob2 = d.getValueAt(n, 2);
-                
-                      try{
-                
-            Class.forName("com.mysql.jdbc.Driver");
-              
-            String url= "jdbc:mysql://localhost:3306/gestion";
-            
-            String user="root"; 
-            
-            String pass="";
-            
-            Connection c1 =DriverManager.getConnection(url, user, pass);
-            
-            System.out.println("Connection bien etablie");
-            
-            Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            
-            ResultSet b = a.executeQuery("SELECT * FROM garnitures WHERE bonneref='"+ob+"'");
-            
-            b.first();
-         
-            b.updateObject("Quantite", ob1);
-            
-            b.updateObject("Designation", ob2);           
-            
-            b.updateRow();
-            
-            JOptionPane.showMessageDialog(null, "Modification effcetuée", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
-            
-            
-            }catch(Exception ex){
-            
+
+        public void actionPerformed(ActionEvent e) {
+
+            int n = jTable1.getSelectedRow();
+
+            Object ob = d.getValueAt(n, 0);
+
+            Object ob1 = d.getValueAt(n, 3);
+
+            Object ob2 = d.getValueAt(n, 2);
+
+            try {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String url = "jdbc:mysql://localhost:3306/gestion";
+
+                String user = "root";
+
+                String pass = "";
+
+                Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                System.out.println("Connection bien etablie");
+
+                Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+                ResultSet b = a.executeQuery("SELECT * FROM garnitures WHERE bonneref='" + ob + "'");
+
+                b.first();
+
+                b.updateObject("Quantite", ob1);
+
+                b.updateObject("Designation", ob2);
+
+                b.updateRow();
+
+                JOptionPane.showMessageDialog(null, "Modification effectuée", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (Exception ex) {
+
             }
-   
-            }
-   }
-    
+
+        }
+    }
+
 }

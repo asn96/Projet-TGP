@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gestock1;
 
+import gestockDB.Annuler;
 import gestockDB.AnnulerBon;
+import java.awt.Button;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +13,6 @@ import java.sql.Statement;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -27,45 +23,51 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author lalita
  */
-public class Infobononpayé extends JFrame {
+public class DetailFacture extends JFrame {
 
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2, jButton3, detailb;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    DefaultTableModel d;
-    public JButton b1;
     private JLabel jLabel2;
+    DefaultTableModel d;
 
-    public Infobononpayé() {
+    private Object idFacture;
+    private Object facPrenom;
+    private Object facNom;
+    private String etafacture;
+    private String libelle;
 
+    public DetailFacture(String libelle, Object idFacture, Object facPrenom, Object facNom, String eta) {
+        this.libelle = libelle;
+        this.idFacture = idFacture;
+        this.facPrenom = facPrenom;
+        this.facNom = facNom;
+        this.etafacture = eta;
         initComponents();
     }
 
     private void initComponents() {
-
+    
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        detailb = new JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        b1 = new JButton();
         jLabel2 = new JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
-        setResizable(false);
+        setResizable(true);
         setVisible(true);
-        setTitle("GESTOCK");
+        setTitle("GESTOCK : Résumer "+libelle);
         setPreferredSize(new Dimension(936, 590));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
@@ -83,34 +85,13 @@ public class Infobononpayé extends JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon("pieces\\imprimer1.jpg")); // NOI18N
         jButton2.setText("Imprimer");
         jPanel1.add(jButton2);
-        jButton2.setBounds(190, 20, 110, 29);
-
-        b1.setBackground(new java.awt.Color(255, 255, 255));
-        b1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        b1.setText("Payer");
-        jPanel1.add(b1);
-        b1.setBounds(340, 20, 110, 29);
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("pieces\\actu.jpg")); // NOI18N
-        jButton3.setText("Annuler");
-        jButton3.addActionListener(new supprimer());
-        jPanel1.add(jButton3);
-        jButton3.setBounds(510, 20, 110, 29);
-
-        //detail
-        detailb.setBackground(new java.awt.Color(255, 255, 255));
-        detailb.setFont(new java.awt.Font("Tahoma", 1, 11));
-        detailb.setText("Détails");
-        jPanel1.add(detailb);
-        detailb.setBounds(680, 20, 90, 29);
+        jButton2.setBounds(190, 20, 130, 29);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Information sur les bons non payés ");
+        jLabel2.setText("Détails "+libelle+" "+etafacture+" de "+facPrenom+" "+facNom);
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(260, 20, 510, 22);
+        jLabel2.setBounds(240, 20, 510, 22);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 500, 940, 60);
@@ -130,10 +111,9 @@ public class Infobononpayé extends JFrame {
         getContentPane().add(jPanel4);
         jPanel4.setBounds(900, 50, 40, 450);
 
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(30, 50, 870, 450);
+        jScrollPane1.setViewportView(jTable1);
+        getContentPane().add(jScrollPane1);
 
         pack();
 
@@ -141,10 +121,13 @@ public class Infobononpayé extends JFrame {
 
         jButton2.addActionListener(new Imprimer());
 
-        b1.addActionListener(new Payer());
-
-        detailb.addActionListener(new detail());
         CreateColonne();
+
+        SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+
+        String dat = form.format(new Date());
+
+        String et = "facture";
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -161,51 +144,54 @@ public class Infobononpayé extends JFrame {
 
             Statement a = c1.createStatement();
 
-            ResultSet b = a.executeQuery("SELECT * FROM bon WHERE Etat='" + 0 + "' ORDER BY Date DESC");
+            String[] types = {"ventegar", "ventepieces", "venteau"};
+            double total = 0d;
+            for (String type : types) {
+                ResultSet b = a.executeQuery("SELECT * FROM " + type + "  WHERE IDr='" + this.idFacture + "' ORDER BY Date DESC");
 
-            int bonn;
+                int reference, identifiant;
 
-            String nom;
+                String designation;
 
-            String vi;
+                int qte;
 
-            String reg;
+                double pu;
 
-            String numa;
+                double pt;
 
-            double mont;
+                String date;
 
-            String datet;
+                while (b.next()) {
 
-            while (b.next()) {
+                    identifiant = b.getInt("Identifiant");
 
-                bonn = b.getInt("Identifiant");
+                    designation = b.getString("Designation");
 
-                nom = b.getString("Nom");
+                    reference = b.getInt("bonneref");
 
-                vi = b.getString("Ville");
+                    pu = b.getDouble("Prix_unitaire");
 
-                reg = b.getString("Region");
+                    pt = b.getDouble("Total");
 
-                numa = b.getString("Numero_auto");
+                    qte = b.getInt("Quantite");
 
-                mont = b.getDouble("Montant");
-
-                datet = b.getString("Date");
-
-                ligne(bonn, nom, vi, reg, numa, mont, datet);
-
+                    date = b.getString("Date");
+                    
+                    total+=pt;
+                    ligne(identifiant, designation, reference, pu, qte, pt, date);
+                }
             }
+            
+            ligne1("Total", total, "");
+            total = 0d;
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
         setLocationRelativeTo(null);
     }
 
     public static void main(String args[]) {
-
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -222,10 +208,9 @@ public class Infobononpayé extends JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Infobononpayé().setVisible(true);
+                new DetailFacture("Facture", 1117, "amad Saïd ", "ndiaye", "non payée").setVisible(true);
             }
         });
     }
@@ -233,40 +218,26 @@ public class Infobononpayé extends JFrame {
     public void CreateColonne() {
 
         d = (DefaultTableModel) jTable1.getModel();
-
-        d.addColumn("Identifiant Bon");
-        d.addColumn("Entreprise");
-        d.addColumn("Ville");
-        d.addColumn("Region");
-        d.addColumn("Numero auto");
-        d.addColumn("Montant");
+        d.addColumn("Identifiant");
+        d.addColumn("Désignation");
+        d.addColumn("Référence");
+        d.addColumn("Prix Unitaire");
+        d.addColumn("Quantité");
+        d.addColumn("Prix Total");
         d.addColumn("Date Pret");
-
     }
 
-    public void ligne(int a, String b, String c, String e, String f, double g, String i) {
+    public void ligne(int identifiant, String designation, int reference, double prix_unit, int qte, double prix_total, String datePret) {
 
-        Object[] line = {a, b, c, e, f, g, i};
+        Object[] line = {identifiant, designation, reference, prix_unit, qte, prix_total, datePret};
 
         d.addRow(line);
     }
+    public void ligne1(String lm, double ln, String ll) {
 
-    class detail implements ActionListener {
+        Object[] line = {lm, ln, ll};
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (jTable1.getSelectedRow() != -1) {
-                int n = jTable1.getSelectedRow();
-                Object facId = d.getValueAt(n, 0);
-                Object facPrenom = d.getValueAt(n, 1);
-                Object facNom = d.getValueAt(n, 4);
-
-                DetailFacture detailFacture = new DetailFacture("Bon", facId, facPrenom, facNom, "non payé");
-
-            } else {
-                JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
+        d.addRow(line);
     }
 
     class Quitter implements ActionListener {
@@ -274,93 +245,19 @@ public class Infobononpayé extends JFrame {
         public void actionPerformed(ActionEvent e) {
 
             setVisible(false);
-
         }
-
     }
 
     class Imprimer implements ActionListener {
-
+    
         public void actionPerformed(ActionEvent e) {
-
-            MessageFormat hed = new MessageFormat("Liste des Bons Non Payés");
-
+            MessageFormat hed = new MessageFormat(libelle+" "+etafacture+" de " + facPrenom + " " + facNom);
             MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
             try {
                 jTable1.print(JTable.PrintMode.FIT_WIDTH, hed, hed1);
             } catch (Exception l) {
-
                 System.out.println(l.getMessage());
             }
-
         }
     }
-
-    class Payer implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-
-            SimpleDateFormat for1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-            String dat2 = for1.format(new Date());
-
-            int n = jTable1.getSelectedRow();
-
-            Object ob1 = d.getValueAt(n, 0);
-
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-
-                String url = "jdbc:mysql://localhost:3306/gestion";
-
-                String user = "root";
-
-                String pass = "";
-
-                Connection c1 = DriverManager.getConnection(url, user, pass);
-
-                System.out.println("Connection bien etablie");
-
-                Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-                ResultSet b = a.executeQuery("SELECT * FROM bon WHERE Identifiant='" + ob1 + "'");
-
-                b.first();
-
-                b.updateInt("Etat", 1);
-
-                b.updateString("datePayer", dat2);
-
-                b.updateRow();
-
-                d.removeRow(n);
-
-                JOptionPane.showMessageDialog(null, "Paiement effectué", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
-
-            } catch (Exception oui) {
-
-            }
-
-        }
-
-    }
-
-    class supprimer implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-
-            int n = jTable1.getSelectedRow();
-
-            Object ob = d.getValueAt(n, 0);
-
-            AnnulerBon a = new AnnulerBon(ob);
-            a.AnnuleGar();
-            a.AnnulePiece();
-            a.AnnuleAutre();
-            d.removeRow(n);
-            JOptionPane.showMessageDialog(null, "Le Bon a été annulée avec succés", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
-
-        }
-    }
-
 }

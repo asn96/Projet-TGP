@@ -12,6 +12,7 @@ import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -25,14 +26,14 @@ public class Facturepayead extends JFrame{
     
      private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton3, detailb;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    
+    private JLabel jLabel2;
     private javax.swing.JComboBox<String> jComboBox1;
 
     DefaultTableModel d;
@@ -47,13 +48,15 @@ public class Facturepayead extends JFrame{
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        detailb = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
-
+        jLabel2 = new JLabel();
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(null);
         setResizable(false);
@@ -69,31 +72,44 @@ public class Facturepayead extends JFrame{
         jButton1.setIcon(new javax.swing.ImageIcon("pieces\\retour.jpg")); // NOI18N
         jButton1.setText("Fermer");
         jPanel1.add(jButton1);
-        jButton1.setBounds(40, 20, 110, 25);
+        jButton1.setBounds(40, 20, 90, 29);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon("pieces\\imprimer1.jpg")); // NOI18N
         jButton2.setText("Imprimer");
         
-        jButton2.setBounds(190, 20, 130, 29);
+        jButton2.setBounds(150, 20, 110, 29);
         jPanel1.add(jButton2);
         
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon("pieces\\actu.jpg")); // NOI18N
         jButton3.setText("Annuler");
-        jButton3.setBounds(550, 20, 130, 29);
+        jButton3.setBounds(280, 20, 100, 29);
         jPanel1.add(jButton3);
+  
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Information sur les factures payées ");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(30, 20, 510, 22);
+
         
-        
+        //detail
+        detailb.setBackground(new java.awt.Color(255, 255, 255));
+        detailb.setFont(new java.awt.Font("Tahoma", 1, 11));
+        detailb.setText("Détails");
+        jPanel1.add(detailb);
+        detailb.setBounds(400, 20, 90, 29);
+
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
          
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 11)); 
         
-        jPanel1.add(jComboBox1);
+        jPanel2.add(jComboBox1);
         
-        jComboBox1.setBounds(350, 20, 150, 29);
+        jComboBox1.setBounds(550, 18, 150, 29);
         
         jComboBox1.addItem("Jour");
      
@@ -108,6 +124,8 @@ public class Facturepayead extends JFrame{
         jButton2.addActionListener(new Imprimer());
         
         jButton3.addActionListener(new supprimer());
+        
+        detailb.addActionListener(new detail());
         
         jComboBox1.addActionListener(new Afficher());
         
@@ -282,6 +300,26 @@ public class Facturepayead extends JFrame{
                   
                   d.addRow(line);
      }
+
+    public class detail implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          
+            if(jTable1.getSelectedRow() != -1) {
+                int n = jTable1.getSelectedRow();
+            Object facId = d.getValueAt(n, 0);
+            Object facPrenom = d.getValueAt(n, 5);
+            Object facNom = d.getValueAt(n, 4);
+            
+            DetailFacture detailFacture = new DetailFacture("Facture",facId, facPrenom, facNom, "payée");
+
+            }else{
+                JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
+            }
+        
+    }
+    }
    
     class Quitter implements ActionListener {
             

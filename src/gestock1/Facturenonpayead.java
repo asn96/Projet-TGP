@@ -15,6 +15,7 @@ import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -37,7 +38,7 @@ public class Facturenonpayead extends JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     public JButton payb, detailb;
-
+    private JLabel jLabel2;
     private javax.swing.JComboBox<String> combo1;
 
     DefaultTableModel d;
@@ -61,6 +62,7 @@ public class Facturenonpayead extends JFrame {
         combo1 = new javax.swing.JComboBox<>();
         payb = new JButton();
         detailb = new JButton();
+        jLabel2 = new JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -100,6 +102,13 @@ public class Facturenonpayead extends JFrame {
         jPanel1.add(payb);
         payb.setBounds(400, 20, 90, 29);
 
+        
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Information sur les factures non payées ");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(30, 20, 510, 22);
+        
         //detail
         detailb.setBackground(new java.awt.Color(255, 255, 255));
         detailb.setFont(new java.awt.Font("Tahoma", 1, 11));
@@ -752,12 +761,23 @@ public class Facturenonpayead extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+          
+            if(jTable1.getSelectedRow() != -1) {
+                int n = jTable1.getSelectedRow();
+            Object facId = d.getValueAt(n, 0);
+            Object facPrenom = d.getValueAt(n, 4);
+            Object facNom = d.getValueAt(n, 3);
             
+            DetailFacture detailFacture = new DetailFacture("Facture", facId, facPrenom, facNom, "non payée");
+
+            }else{
+                JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
+            }
+                        /*
             /*
-            int n = jTable1.getSelectedRow();
-            Object ob = d.getValueAt(n, 0);
             
-            */
+            
+            *
              int ROWS = 3;
              Object[][] data = { { "A", "B", "Snowboarding", new Integer(5) },
         { "C", "D", "Pool", new Integer(10) } };
@@ -795,7 +815,8 @@ public class Facturenonpayead extends JFrame {
                     
                     /*JOptionPane jOptionPane = new JOptionPane();
             jOptionPane.showInputDialog("je suis là");
-            */
+            /
+        */            
         }
         
     }

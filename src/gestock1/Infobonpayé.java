@@ -13,7 +13,9 @@ import java.sql.Statement;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -25,13 +27,14 @@ import javax.swing.table.DefaultTableModel;
 public class Infobonpayé extends JFrame{
     
      private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2, jButton3;
+    private javax.swing.JButton jButton2, jButton3, detailb;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private JLabel jLabel2;
     DefaultTableModel d;
     
     public Infobonpayé(){
@@ -44,9 +47,11 @@ public class Infobonpayé extends JFrame{
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        detailb = new JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -65,14 +70,14 @@ public class Infobonpayé extends JFrame{
         jButton1.setIcon(new javax.swing.ImageIcon("pieces\\retour.jpg")); // NOI18N
         jButton1.setText("Fermer");
         jPanel1.add(jButton1);
-        jButton1.setBounds(40, 20, 110, 25);
+        jButton1.setBounds(40, 20, 110, 29);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon("pieces\\imprimer1.jpg")); // NOI18N
         jButton2.setText("Imprimer");
         jPanel1.add(jButton2);
-        jButton2.setBounds(190, 20, 130, 29);
+        jButton2.setBounds(190, 20, 110, 29);
         
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -80,7 +85,22 @@ public class Infobonpayé extends JFrame{
         jButton3.setText("Annuler");
         jButton3.addActionListener(new supprimer());
         jPanel1.add(jButton3);
-        jButton3.setBounds(360, 20, 130, 29);
+        jButton3.setBounds(360, 20, 110, 29);
+
+        //detail
+        detailb.setBackground(new java.awt.Color(255, 255, 255));
+        detailb.setFont(new java.awt.Font("Tahoma", 1, 11));
+        detailb.setText("Détails");
+        jPanel1.add(detailb);
+        detailb.setBounds(520, 20, 90, 29);
+
+        
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Information sur les bons payés ");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(260, 20, 510, 22);
+
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 500, 940, 60);
@@ -113,6 +133,7 @@ public class Infobonpayé extends JFrame{
         
         jButton2.addActionListener(new Imprimer());
         
+        detailb.addActionListener(new detail());
         CreateColonne();
         
         SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
@@ -230,7 +251,6 @@ public class Infobonpayé extends JFrame{
         d.addColumn("Montant");
         d.addColumn("Date Pret");
         d.addColumn("Date Paiement");
-        d.addColumn("Détails");
         
 
         
@@ -239,10 +259,31 @@ public class Infobonpayé extends JFrame{
     }
      public void ligne(int a, String b, String c, String e, String f, double g, String i, String datePayer ){
         
-                  Object[] line ={a, b, c, e, f, g, i, datePayer, new Button("...")};
+                  Object[] line ={a, b, c, e, f, g, i, datePayer};
                   
                   d.addRow(line);
      }
+
+    class detail implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(jTable1.getSelectedRow() != -1) {
+                int n = jTable1.getSelectedRow();
+            Object facId = d.getValueAt(n, 0);
+            Object facPrenom = d.getValueAt(n, 1);
+            Object facNom = d.getValueAt(n, 4);
+            
+            DetailFacture detailFacture = new DetailFacture("Bon", facId, facPrenom, facNom, "payé");
+
+            }else{
+                JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
+            }
+             
+        }
+        
+
+    }
      
     class Quitter implements ActionListener {
             
