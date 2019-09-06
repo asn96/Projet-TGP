@@ -251,7 +251,7 @@ public class progression extends javax.swing.JFrame {
                 jProgressBar1.setValue(k);
                 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(progression.class.getName()).log(Level.SEVERE, null, ex);
                 }

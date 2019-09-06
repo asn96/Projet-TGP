@@ -186,9 +186,59 @@ public class Facturepayesec extends JFrame {
                 ligne(refp, mon, datePret, datePayer, nomp, prenomp);
 
             }
-            ligne1("Total", fini, "");
+          
 
-            fini = 0d;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+         try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String url = "jdbc:mysql://localhost:3306/gestion";
+
+            String user = "root";
+
+            String pass = "";
+
+            Connection c1 = DriverManager.getConnection(url, user, pass);
+
+            System.out.println("Connection bien etablie");
+
+            Statement a = c1.createStatement();
+
+            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='" + datfr1 + "' AND MONTH(Date)='" + datfr2 + "' AND DAYOFMONTH(Date)='" + datfr3 + "' AND Etat='" + 1 + "') ORDER BY Date DESC");
+
+            int refp;
+
+            double mon;
+
+            String nomp;
+
+            String prenomp;
+
+            String date;
+
+            while (b.next()) {
+
+                refp = b.getInt("Identifiant");
+
+                mon = b.getDouble("Montant");
+
+                nomp = b.getString("Nom");
+
+                prenomp = b.getString("Prenom");
+
+                date = b.getString("Date");
+
+                fini = fini + mon;
+
+                ligne(refp, mon, date, date, nomp, prenomp);
+
+            }
+              ligne1("Total", fini, "");
+
+               fini = 0d;
 
         } catch (Exception ex) {
             ex.printStackTrace();

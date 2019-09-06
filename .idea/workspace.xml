@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="01bf8945-5f56-48b3-97a3-2f8de82972bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Ajoupre$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Ajoupre$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Ajoupre$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Ajoupre$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Ajoupre$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Ajoupre$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Ajoupre$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Ajoupre$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Ajoupre.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Ajoupre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterAutres$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterAutres.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterAutres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterGarnitures.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterPieces$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/AjouterPieces.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/AjouterPieces.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Authen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Authen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authen.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authentification$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Authentification$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authentification$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Authentification$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authentification$Acces.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Authentification$Acces.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Authentification.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Authentification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Avertissment.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Avertissment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Bon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Bon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Bon$Ajout.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Bon$Ajout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Bon$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Bon$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Bon$Fermer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Bon$Fermer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Bon$selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Bon$selection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Bon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Bon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Afficher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Afficher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Payer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Payer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead$supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$Payer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$Payer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturenonpayeesc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayead$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayead$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayead$Afficher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayead$Afficher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayead$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayead$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayead$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayead$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayead$supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayead$supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayead.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayesec$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayesec$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayesec$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayesec$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayesec$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayesec$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Facturepayesec.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Facturepayesec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/GESTOCK$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/GESTOCK$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/GESTOCK.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/GESTOCK.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/InfoPart$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/InfoPart$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/InfoPart$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/InfoPart$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/InfoPart$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/InfoPart$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/InfoPart$Liste1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/InfoPart$Liste1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/InfoPart$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/InfoPart$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/InfoPart.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/InfoPart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$Payer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$Payer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobononpayé$supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobononpayé.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobononpayé.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobonpayé$supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infobonpayé.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infobonpayé.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensead$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensead$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensead$Afficher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensead$Afficher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensead$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensead$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensead$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensead$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensead$supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensead$supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensead.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensesec$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensesec$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensesec$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensesec$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensesec$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensesec$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infodepensesec.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infodepensesec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadau$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadau$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadau$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadau$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadau$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadau$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadga$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadga$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadga$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadga$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadga$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadga$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadga.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadga.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadpi$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadpi$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadpi$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadpi$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadpi$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadpi$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreadpi.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreadpi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreesc$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreesc$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreesc$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreesc$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreesc$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreesc$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infopreesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infopreesc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventadpi$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventadpi$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventadpi$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventadpi$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventadpi$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventadpi$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventadpi.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventadpi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeadga$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeadga$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeadga$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeadga$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeadga$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeadga$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeadga.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeadga.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeau$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeau$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeau$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeau$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeau$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeau$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventeau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventeau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventsec$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventsec$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventsec$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventsec$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventsec$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventsec$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Infoventsec.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Infoventsec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Liste$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Liste$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Liste$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Liste$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Liste$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Liste$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Liste$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Liste$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Liste$Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Liste$Supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Liste.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Liste.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/NewJFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/NewJFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/NewJFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/NewJFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/NewJFrame.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Personnel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Personnel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Personnel$Appliquer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Personnel$Appliquer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Personnel$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Personnel$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Personnel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Personnel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Afficher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Afficher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduAu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Afficher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Afficher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduGar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Afficher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Afficher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/QuantiteVenduPieces.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Resumesec$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Resumesec$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Resumesec$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Resumesec$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Resumesec$Solde.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Resumesec$Solde.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Resumesec.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Resumesec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Modifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$actu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar$actu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponibleGar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Modifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$actu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces$actu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblePieces.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Modifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$actu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres$actu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/StockDisponiblesAutres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Utilisateur$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Utilisateur$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Utilisateur$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Utilisateur$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Utilisateur$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Utilisateur$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Utilisateur$supp1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Utilisateur$supp1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/Utilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/Utilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/UtilisateurConnecter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/UtilisateurConnecter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/UtilisateurConnecter$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/UtilisateurConnecter$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/UtilisateurConnecter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/UtilisateurConnecter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume$Solde1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume$Solde1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/adminresume.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/adminresume.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/depense$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/depense$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/depense$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/depense$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/depense$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/depense$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/depense.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/depense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$Nettoyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$Nettoyer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$Pretau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$Pretau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$Pretga.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$Pretga.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$Pretpi.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$Pretpi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ajou1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ajou1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ajou2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ajou2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ajou3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ajou3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$dispo1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$dispo1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$dispo2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$dispo2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$dispo3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$dispo3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$facnpa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$facnpa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$facpa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$facpa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$gdepfinadmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$gdepfinadmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$parte.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$parte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$payeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$payeb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$payenb.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$payenb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$perso.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$perso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$resumeadmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$resumeadmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$retour.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$retour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$sol.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$sol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$supp1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$supp1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$supp2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$supp2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$supp3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$supp3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$uti.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$uti.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$util.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ven1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ven1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ven2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ven2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ven3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ven3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$venteau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$venteau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ventega.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ventega.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin$ventepi.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin$ventepi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pageadmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pageadmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouv.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouv.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouv1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouv1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouv2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouv2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouvbon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$Nouvbon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$bononpa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$bononpa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$bonpa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$bonpa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$deconnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$deconnect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$depj.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$depj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$facnp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$facnp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$facp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$facp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$info1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$info1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$info2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$info2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec$resme.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec$resme.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/pagesec.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/pagesec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/progression$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/progression$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/progression$Traitement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/progression$Traitement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/progression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/progression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/progression.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/solde$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/solde$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/solde$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/solde$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/solde$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/solde$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/solde$Rechercher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/solde$Rechercher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/solde.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/solde.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/vente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/vente$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/vente$Ajouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/vente$Ajouter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/vente$Imprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/vente$Imprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/vente$Quitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/vente$Quitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestock1/vente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestock1/vente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestockDB/Annuler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestockDB/Annuler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestockDB/AnnulerBon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/gestockDB/AnnulerBon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/gestockDB/package-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/classes/" />
+    <ignored path="$PROJECT_DIR$/bin/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gestock1/Authentification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5236">
+              <caret line="334" column="64" selection-start-line="334" selection-start-column="57" selection-end-line="334" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gestion.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6664">
+              <caret line="392" column="45" selection-start-line="392" selection-start-column="45" selection-end-line="392" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gestock1/GESTOCK.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gestock1/Facturepayesec.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/Pro TGP.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Pro TGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-TGP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pro TGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-TGP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pro TGP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet-TGP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gestock1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="GESTOCK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gestock1.GESTOCK" />
+      <module name="Pro TGP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gestock1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GESTOCK" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01bf8945-5f56-48b3-97a3-2f8de82972bd" name="Default Changelist" comment="" />
+      <created>1567780468762</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567780468762</updated>
+      <workItem from="1567780470104" duration="723000" />
+      <workItem from="1567781649136" duration="285000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1008000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Learn" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32900432" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/gestock1/Authentification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5236">
+          <caret line="334" column="64" selection-start-line="334" selection-start-column="57" selection-end-line="334" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestion.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6664">
+          <caret line="392" column="45" selection-start-line="392" selection-start-column="45" selection-end-line="392" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gestock1/Facturepayesec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gestock1/GESTOCK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
