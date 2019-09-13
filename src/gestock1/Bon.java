@@ -972,7 +972,7 @@ public class Bon extends JFrame{
                 
                 java.sql.Connection c1=DriverManager.getConnection(url, user, pass1);
                     
-                PreparedStatement a = c1.prepareStatement("INSERT INTO bon VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+                PreparedStatement a = c1.prepareStatement("INSERT INTO bon VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 
                 a.setString(1, jTextField5.getText());
                 
@@ -989,7 +989,9 @@ public class Bon extends JFrame{
                 a.setString(7, dat2);
                 
                 a.setInt(8, 0);
-                               
+                
+                a.setString(9, "");
+                
                 a.executeUpdate();
                 
                 tout=0d;

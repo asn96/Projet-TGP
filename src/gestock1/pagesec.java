@@ -25,9 +25,8 @@ import javax.swing.JOptionPane;
  *
  * @author KINGBOURY
  */
-public class pagesec extends JFrame{
-    
-   
+public class pagesec extends JFrame {
+
     public JLabel jLabel5;
     public JMenu jMenu1;
     public JMenu jMenu2;
@@ -51,11 +50,9 @@ public class pagesec extends JFrame{
     public JMenuItem jMenuItem13;
     public JMenuItem jb1;
     public JMenuItem jb2;
-    
-    
-    public pagesec(){
-    
-    
+
+    public pagesec() {
+
         jLabel5 = new JLabel();
         jMenuBar1 = new JMenuBar();
         jMenu5 = new JMenu();
@@ -80,7 +77,7 @@ public class pagesec extends JFrame{
         jb1 = new JMenuItem();
         jb2 = new JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
         setVisible(true);
         setResizable(false);
@@ -125,95 +122,88 @@ public class pagesec extends JFrame{
         jMenu4.add(jMenuItem8);
 
         jMenuItem9.setText("Informations");
-        
+
         jb1.setText("Payé");
-        
+
         jMenuItem9.add(jb1);
-        
+
         jb2.setText("Non Payé");
-        
+
         jMenuItem9.add(jb2);
-        
+
         jMenu4.add(jMenuItem9);
 
         jMenuBar1.add(jMenu4);
-        
+
         jMenu6.setText("Pret");
-           
+
         jMenuItem11.setText("Nouveau");
-        
+
         jMenu6.add(jMenuItem11);
-        
+
         jMenuItem12.setText("Informations");
-        
+
         jMenu6.add(jMenuItem12);
-        
+
         jMenuBar1.add(jMenu6);
 
         jMenu3.setText("Inventaire");
 
         jMenuItem5.setText("Facture paye");
-        
+
         jMenu3.add(jMenuItem5);
-        
+
         jMenuItem13.setText("Facture non paye");
-        
+
         jMenu3.add(jMenuItem13);
 
         jMenuItem6.setText("Depense");
-        
+
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setText("Resume");
         jMenu3.add(jMenuItem7);
 
         jMenuBar1.add(jMenu3);
-        
-         
-        
 
         setJMenuBar(jMenuBar1);
 
         pack();
-        
+
         jMenuItem10.addActionListener(new deconnect());
-        
+
         jMenuItem1.addActionListener(new Nouv());
-        
+
         jMenuItem3.addActionListener(new Nouv1());
-        
+
         jMenuItem11.addActionListener(new Nouv2());
-        
+
         jMenuItem2.addActionListener(new info());
-         
+
         jMenuItem4.addActionListener(new info1());
-          
+
         jMenuItem12.addActionListener(new info2());
-        
-        jMenuItem5.addActionListener(new facp()); 
-        
+
+        jMenuItem5.addActionListener(new facp());
+
         jMenuItem13.addActionListener(new facnp());
-        
+
         jMenuItem6.addActionListener(new depj());
-        
+
         jMenuItem7.addActionListener(new resme());
-        
+
         jb1.addActionListener(new bonpa());
-        
+
         jb2.addActionListener(new bononpa());
-        
+
         jMenuItem8.addActionListener(new Nouvbon());
-        
-        
-        
+
         setLocationRelativeTo(null);
-    
-    
-    
-    
+
     }
-      public static void main(String args[]) {
-       
+
+    public static void main(String args[]) {
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -239,215 +229,211 @@ public class pagesec extends JFrame{
             }
         });
     }
-         class Nouv implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
-             vente vert = new vente();
-             
-                setVisible(false);
-                
-            }
-            
-         }
+    class Nouv implements ActionListener {
 
-         class Nouv2 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
 
-            public void actionPerformed(ActionEvent e){
-                
-             Ajoupre pre = new Ajoupre();
-             
-             setVisible(false);
-                
-            }
-            
-         }
-         
-         class Nouv1 implements ActionListener {
+            vente vert = new vente();
 
-            public void actionPerformed(ActionEvent e){
-                
+            setVisible(false);
+
+        }
+
+    }
+
+    class Nouv2 implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            Ajoupre pre = new Ajoupre();
+
+            setVisible(false);
+
+        }
+
+    }
+
+    class Nouv1 implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
             depense dep = new depense();
-            
-            setVisible(false);
-                
-            }
-            
-         }
-         
-        class info implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
+            setVisible(false);
+
+        }
+
+    }
+
+    class info implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
             Infoventsec vi = new Infoventsec();
-            
-            setVisible(false);
-                
-            }
-            
-         }
-        
-       class info1 implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
+            setVisible(false);
+
+        }
+
+    }
+
+    class info1 implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
             Infodepensesec vil = new Infodepensesec();
-            
-            setVisible(false);
-                
-            }
-            
-         }
-       
-      class info2 implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
+            setVisible(false);
+
+        }
+
+    }
+
+    class info2 implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
             Infopreesc c = new Infopreesc();
-            
+
             setVisible(false);
-                
-            }
-            
-         }
-      class facp implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
-               Facturepayesec hj = new Facturepayesec();
-               
-               setVisible(false);
-                
-            }
-            
-         }
-      
-       class facnp implements ActionListener {
+        }
 
-            public void actionPerformed(ActionEvent e){
-                
-              Facturenonpayeesc hjn = new Facturenonpayeesc();
-              
-              setVisible(false);
-                
-            }
-            
-         }
-       
-        class depj implements ActionListener {
+    }
 
-            public void actionPerformed(ActionEvent e){
-                
-              Infodepensesec fg = new Infodepensesec();
-              
-              setVisible(false);
-                
-            }
-            
-         }
-        
-         class resme implements ActionListener {
+    class facp implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
-              Resumesec ref = new Resumesec();
-              
-              setVisible(false);
-                
-            }
-            
-         }
-         
-        class deconnect implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
 
-            public void actionPerformed(ActionEvent e){
-                
-              
-                
-              int op = JOptionPane.showConfirmDialog(null, "Voulez vous vraiment vous deconnecter?","GESTOCK", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-              
-              if(op==JOptionPane.OK_OPTION){
-                  
-                  SimpleDateFormat form = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                       
-                  String bf0 = form.format(new Date());
-                 
-                  String bf1 = "2018/05/08 14:55:00";
-                  
-                                       try{
-                
-            Class.forName("com.mysql.jdbc.Driver");
-              
-            String url= "jdbc:mysql://localhost:3306/gestion";
-            
-            String user="root"; 
-            
-            String pass="";
-            
-            Connection c1 =DriverManager.getConnection(url, user, pass);
-            
-            System.out.println("Connection bien etablie");
-            
-            Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            
-            ResultSet b = a.executeQuery("SELECT * FROM utiljour WHERE Date_Sorti='"+bf1+"'");
-            
-            b.first();
-         
-            b.updateString("Date_Sorti", bf0);
-           
-            
-            b.updateRow();
-            
-           
-            }catch(Exception ex){
-            
-            }
-                  
-                   setVisible(false);
-                   
-                   Authentification aut = new Authentification();
-              }
-              else{
-                  
-                  
-              }
-                
-            }
-            
-         }
-       class bonpa implements ActionListener {
+            Facturepayesec hj = new Facturepayesec();
 
-            public void actionPerformed(ActionEvent e){
-                
-               Infobonpayé jhhyu = new Infobonpayé();
-                
-            }
-            
-         }
-       
-        class bononpa implements ActionListener {
+            setVisible(false);
 
-            public void actionPerformed(ActionEvent e){
-                
-               Infobononpayé jophhyu = new Infobononpayé();
-                
+        }
+
+    }
+
+    class facnp implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            Facturenonpayeesc hjn = new Facturenonpayeesc();
+
+            setVisible(false);
+
+        }
+
+    }
+
+    class depj implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            Infodepensesec fg = new Infodepensesec();
+
+            setVisible(false);
+
+        }
+
+    }
+
+    class resme implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            adminresume ad = new adminresume();
+
+            ad.setVisible(true);
+
+            setVisible(false);
+
+        }
+
+    }
+
+    class deconnect implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            int op = JOptionPane.showConfirmDialog(null, "Voulez vous vraiment vous deconnecter?", "GESTOCK", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+            if (op == JOptionPane.OK_OPTION) {
+
+                SimpleDateFormat form = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
+                String bf0 = form.format(new Date());
+
+                String bf1 = "2018/05/08 14:55:00";
+
+                try {
+
+                    Class.forName("com.mysql.jdbc.Driver");
+
+                    String url = "jdbc:mysql://localhost:3306/gestion";
+
+                    String user = "root";
+
+                    String pass = "";
+
+                    Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                    System.out.println("Connection bien etablie");
+
+                    Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+                    ResultSet b = a.executeQuery("SELECT * FROM utiljour WHERE Date_Sorti='" + bf1 + "'");
+
+                    b.first();
+
+                    b.updateString("Date_Sorti", bf0);
+
+                    b.updateRow();
+
+                } catch (Exception ex) {
+
+                }
+
+                setVisible(false);
+
+                Authentification aut = new Authentification();
+            } else {
+
             }
 
         }
-        
-         class Nouvbon implements ActionListener {
 
-            public void actionPerformed(ActionEvent e){
-                
-               Bon fghj = new Bon();
-               
-               setVisible(false);
-                
-            }
+    }
+
+    class bonpa implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            Infobonpayé jhhyu = new Infobonpayé();
 
         }
-        
 
-    
-       }
+    }
+
+    class bononpa implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            Infobononpayé jophhyu = new Infobononpayé();
+
+        }
+
+    }
+
+    class Nouvbon implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            Bon fghj = new Bon();
+
+            setVisible(false);
+
+        }
+
+    }
+
+}

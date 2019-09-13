@@ -206,13 +206,13 @@ public class Resumesec extends JFrame{
 
         pack();
         
-          setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         
         CreateColonne1();
         
         CreateColonne2();
         
-         SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
         
         SimpleDateFormat form1 = new SimpleDateFormat("yyyy");
         
