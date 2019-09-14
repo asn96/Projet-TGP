@@ -207,7 +207,7 @@ public class Infodepensead extends JFrame{
                ligne(id, mon, com, dat);
                
       }
-              String to = "Total:"+fini1;
+              String to = "Total:"+Facturepayead.n2.format(fini1);
               
                  ligne1("", to, "", "");
         
@@ -381,7 +381,7 @@ double fini=0d;
      ligne(id, mon, com, df);
      
  }
-    String to = "Total:"+fini;
+    String to = "Total:"+Facturepayead.n2.format(fini);
     
        ligne1("", to, "", "");
 
@@ -445,7 +445,7 @@ catch(Exception ex){
                ligne(id, mon, com, df);
                
            }
-              String to = "Total:"+fini;
+              String to = "Total:"+Facturepayead.n2.format(fini);
               
                  ligne1("", to, "", "");
         
@@ -507,7 +507,7 @@ catch(Exception ex){
                ligne(id, mon, com, df);
                
            }
-              String to = "Total:"+fini;
+              String to = "Total:"+Facturepayead.n2.format(fini);
               
                  ligne1("", to, "", "");
         
@@ -571,7 +571,7 @@ catch(Exception ex){
                ligne(id, mon, com, df);
                
            }
-              String to = "Total:"+fini;
+              String to = "Total:"+Facturepayead.n2.format(fini);
               
                  ligne1("", to, "", "");
         

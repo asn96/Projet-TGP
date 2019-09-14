@@ -318,7 +318,7 @@ public class Resumesec extends JFrame{
                 
              }
             
-         ligne1("Total", fini, "");
+         ligne1("Total", Facturepayead.n2.format(fini), "");
          
          
             
@@ -367,7 +367,7 @@ public class Resumesec extends JFrame{
                ligne2(mon, com, dat);
                
       }
-              String to = "Total:"+fini1;
+              String to = "Total:"+Facturepayead.n2.format(fini1);
               
                  ligne3(to, "", "");
         
@@ -446,7 +446,7 @@ public class Resumesec extends JFrame{
      }
   
      
-  public void ligne1(String lm, double ln, String ll ){
+  public void ligne1(String lm, String ln, String ll ){
         
                   Object[] line ={lm, ln, ll};
                   
@@ -543,7 +543,7 @@ public class Resumesec extends JFrame{
          
             b.updateDouble("Montant", (fini-fini1));
             
-            String totalj=""+(fini-fini1);
+            String totalj=Facturepayead.n2.format(fini-fini1);
             
             jTextField1.setText(totalj);
             

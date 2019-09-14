@@ -196,7 +196,7 @@ public class Facturenonpayeesc extends JFrame {
                 ligne(refp, mon, df, nomp, prenomp);
 
             }
-            ligne1("Total", fini, "");
+            ligne1("Total", Facturepayead.n2.format(fini), "");
 
             fini = 0d;
 
@@ -252,7 +252,7 @@ public class Facturenonpayeesc extends JFrame {
         d.addRow(line);
     }
 
-    public void ligne1(String lm, double ln, String ll) {
+    public void ligne1(String lm, String ln, String ll) {
 
         Object[] line = {lm, ln, ll};
 
@@ -320,6 +320,7 @@ public class Facturenonpayeesc extends JFrame {
 
             Object ob1 = d.getValueAt(n, 0);
             String f = "facture";
+            String datePret = "";
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -340,6 +341,7 @@ public class Facturenonpayeesc extends JFrame {
 
                 b.first();
 
+                datePret = b.getString("Date");
                 b.updateInt("Etat", 1);
 
                 b.updateString("datePayer", dat2);
@@ -368,7 +370,7 @@ public class Facturenonpayeesc extends JFrame {
 
                 Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet b = a.executeQuery("SELECT * FROM ventegar WHERE IDr='" + ob1 + "'");
+                ResultSet b = a.executeQuery("SELECT * FROM ventegar WHERE IDr='" + ob1 + "' AND Date LIKE %'"+datePret+"'%");
 
                 while (b.next()) {
                     b.updateString("Etat", f);
@@ -399,7 +401,7 @@ public class Facturenonpayeesc extends JFrame {
 
                 Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet b = a.executeQuery("SELECT * FROM ventepieces WHERE Identifiant='" + ob1 + "'");
+                ResultSet b = a.executeQuery("SELECT * FROM ventepieces WHERE Identifiant='" + ob1 + "' AND Date LIKE %'"+datePret+"'%");
 
                 b.first();
 
@@ -431,7 +433,7 @@ public class Facturenonpayeesc extends JFrame {
 
                 Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet b = a.executeQuery("SELECT * FROM venteau WHERE Identifiant='" + ob1 + "'");
+                ResultSet b = a.executeQuery("SELECT * FROM venteau WHERE Identifiant='" + ob1 + "' AND Date LIKE %'"+datePret+"'%");
 
                 b.first();
 

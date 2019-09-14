@@ -260,7 +260,7 @@ public class StockDisponiblePieces extends JFrame implements Runnable{
           ligne(h, g, k, p, prixUnit);
             
       }
-        ligne3("", "", "", "", "Solde: "+soldePiece);
+        ligne3("", "", "", "", "Solde: "+Facturepayead.n2.format(soldePiece));
             soldePiece = 0d;
             
          

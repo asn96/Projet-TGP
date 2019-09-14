@@ -52,12 +52,9 @@ public class DetailFacture extends JFrame {
         initComponents();
     }
 
-    public DetailFacture(String libelle, JTable jTable, Object facPrenom, Object facNom, String eta) {
+    public DetailFacture(String libelle, JTable jTable) {
         this.libelle = libelle;
         this.jTable = jTable;
-        this.facPrenom = facPrenom;
-        this.facNom = facNom;
-        this.etafacture = eta;
         initComponentResumes();
     }
 
@@ -192,7 +189,7 @@ public class DetailFacture extends JFrame {
                 }
             }
 
-            ligne1("Total", total, "");
+            ligne1("Total", Facturepayead.n2.format(total), "");
             total = 0d;
 
         } catch (Exception ex) {
@@ -243,9 +240,9 @@ public class DetailFacture extends JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Détails " + libelle + " " + etafacture + " de " + facPrenom + " " + facNom);
+        jLabel2.setText("Détails " + libelle + " ventes ");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(240, 20, 510, 22);
+        jLabel2.setBounds(290, 20, 510, 22);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 500, 940, 60);
@@ -267,9 +264,9 @@ public class DetailFacture extends JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Détails " + libelle + " " + etafacture + " de " + facPrenom + " " + facNom);
+        jLabel3.setText("Détails " + libelle + " payées ");
         jPanel5.add(jLabel3);
-        jLabel3.setBounds(240, 20, 510, 22);
+        jLabel3.setBounds(290, 20, 510, 22);
 
         jPanel5.setBackground(new java.awt.Color(0, 51, 51));
         jPanel5.setLayout(null);
@@ -288,7 +285,7 @@ public class DetailFacture extends JFrame {
 
         jButton1.addActionListener(new Quitter());
 
-        jButton2.addActionListener(new Imprimer());
+        jButton2.addActionListener(new ImprimerRecette());
 
         CreateColonne();
 
@@ -326,11 +323,12 @@ public class DetailFacture extends JFrame {
                 for (String parent : parents) {
                     ResultSet parentQuery = bpret.executeQuery("SELECT * FROM " + parent + "  WHERE Identifiant='" + this.jTable.getValueAt(i, 0) + "' ORDER BY Date DESC");
                     
-                    parentQuery.first();
-                    
-                    String datePayer = parentQuery.getString("datePayer");
-
-                    for (String type : types) {
+                    while (parentQuery.next()) {
+                        String datePayer = parentQuery.getString("datePayer");
+                        String datePret = parentQuery.getString("Date");
+                        //System.out.println(datePayer);
+                        
+                        for (String type : types) {
                         ResultSet b = a.executeQuery("SELECT * FROM " + type + "  WHERE IDr='" + this.jTable.getValueAt(i, 0) + "' ORDER BY Date DESC");
 
                         int reference, identifiant;
@@ -360,24 +358,31 @@ public class DetailFacture extends JFrame {
                             qte = b.getInt("Quantite");
 
                             date = b.getString("Date");
-                            if (datePayer!=null) {
-                            totalpret += pt;
-                            lignePret(identifiant, designation, reference, pu, qte, pt, date);
-                            }else{
-                            
+                            if (datePayer == null || datePayer.equals("")) {
                             totalvente += pt;
                             ligne(identifiant, designation, reference, pu, qte, pt, date);
+                            
+                            }
+                            else{
+                                if(datePayer.contains(date)){
+                                    totalpret += pt;
+                                    lignePret(identifiant, designation, reference, pu, qte, pt, datePret);
+                            
+                                }
+                            
                             }
                             
                             
                         }
                     }
+                    }
+                    
 
                 }
             }
 
-            ligne1("Total", totalvente, "");
-            ligne1Pret("Total", totalpret, "");
+            ligne1("Total", Facturepayead.n2.format(totalvente), "");
+            ligne1Pret("Total", Facturepayead.n2.format(totalpret), "");
             totalvente = 0d; totalpret = 0d;
 
         } catch (Exception ex) {
@@ -419,7 +424,7 @@ public class DetailFacture extends JFrame {
         d.addColumn("Prix Unitaire");
         d.addColumn("Quantité");
         d.addColumn("Prix Total");
-        d.addColumn("Date Pret");
+        d.addColumn("Date");
     }
 
     public void CreateColonnePret() {
@@ -447,14 +452,14 @@ public class DetailFacture extends JFrame {
 
         d2.addRow(line);
     }
-    public void ligne1(String lm, double ln, String ll) {
+    public void ligne1(String lm, String ln, String ll) {
 
         Object[] line = {lm, ln, ll};
 
         d.addRow(line);
     }
 
-        public void ligne1Pret(String lm, double ln, String ll) {
+        public void ligne1Pret(String lm, String ln, String ll) {
 
         Object[] line = {lm, ln, ll};
 
@@ -475,6 +480,22 @@ public class DetailFacture extends JFrame {
             MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
             try {
                 jTable1.print(JTable.PrintMode.FIT_WIDTH, hed, hed1);
+            } catch (Exception l) {
+                System.out.println(l.getMessage());
+            }
+        }
+    }
+    class ImprimerRecette implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            MessageFormat hed1 = new MessageFormat(libelle + " Ventes ");
+            MessageFormat footer1 = new MessageFormat("Page{0, number, integer}");
+            MessageFormat hed2 = new MessageFormat(libelle + " Payées ");
+            MessageFormat footer2 = new MessageFormat("Page{0, number, integer}");
+            
+            try {
+                jTable1.print(JTable.PrintMode.FIT_WIDTH, hed1, footer1);
+                jTable2.print(JTable.PrintMode.FIT_WIDTH, hed2, footer2);
             } catch (Exception l) {
                 System.out.println(l.getMessage());
             }

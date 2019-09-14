@@ -166,7 +166,7 @@ public class Infodepensesec extends JFrame{
                ligne(mon, com, dat);
                
       }
-              String to = "Total:"+fini1;
+              String to = "Total:"+Facturepayead.n2.format(fini1);
               
                  ligne1(to, "", "");
         

@@ -112,133 +112,11 @@ public class adminresume extends javax.swing.JFrame {
 
                 }
             }
-            ligne1("Total", fini, "");
+            ligne1("Total", Facturepayead.n2.format(fini), "");
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-        /*
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            String url = "jdbc:mysql://localhost:3306/gestion";
-
-            String user = "root";
-
-            String pass = "";
-
-            Connection c1 = DriverManager.getConnection(url, user, pass);
-
-            System.out.println("Connection bien etablie");
-
-            Statement a = c1.createStatement();
-
-            int refdepa;
-
-            double mondepa;
-
-            ResultSet detepaye = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(datePayer)='" + datfr1 + "' AND MONTH(datePayer)='" + datfr2 + "' AND DAYOFMONTH(datePayer)='" + datfr3 + "' AND Etat='" + 1 + "')");
-
-            while (detepaye.next()) {
-
-                refdepa = detepaye.getInt("Identifiant");
-
-                mondepa = detepaye.getDouble("Montant");
-
-                fini = fini + mondepa;
-
-                ligne(refdepa, mondepa, dat);
-
-            }
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            String url = "jdbc:mysql://localhost:3306/gestion";
-
-            String user = "root";
-
-            String pass = "";
-
-            Connection c1 = DriverManager.getConnection(url, user, pass);
-
-            System.out.println("Connection bien etablie");
-
-            Statement a = c1.createStatement();
-
-            ResultSet b = a.executeQuery("SELECT * FROM bon WHERE (Date='" + dat + "' AND Etat='" + 1 + "')");
-
-            int bonn;
-
-            double mont;
-
-            String datet;
-
-            while (b.next()) {
-
-                bonn = b.getInt("Identifiant");
-
-                mont = b.getDouble("Montant");
-
-                datet = b.getString("Date");
-
-                fini = fini + mont;
-
-                ligne(bonn, mont, datet);
-
-            }
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            String url = "jdbc:mysql://localhost:3306/gestion";
-
-            String user = "root";
-
-            String pass = "";
-
-            Connection c1 = DriverManager.getConnection(url, user, pass);
-
-            System.out.println("Connection bien etablie");
-
-            Statement a = c1.createStatement();
-
-            ResultSet b = a.executeQuery("SELECT * FROM bon WHERE (YEAR(datePayer)='" + datfr1 + "' AND MONTH(datePayer)='" + datfr2 + "' AND DAYOFMONTH(datePayer)='" + datfr3 + "' AND Etat='" + 1 + "')");
-
-            int bonn;
-
-            double mont;
-
-            String datet;
-
-            while (b.next()) {
-
-                bonn = b.getInt("Identifiant");
-
-                mont = b.getDouble("Montant");
-
-                datet = b.getString("Date");
-
-                fini = fini + mont;
-
-                ligne(bonn, mont, datet);
-
-            }
-
-            ligne1("Total", fini, "");
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }*/
 
         fini1 = 0d;
         try {
@@ -273,7 +151,7 @@ public class adminresume extends javax.swing.JFrame {
                 ligne2(mon, com, dat);
 
             }
-            String to = "Total:" + fini1;
+            String to = "Total:" + Facturepayead.n2.format(fini1);
 
             ligne3(to, "", "");
 
@@ -580,7 +458,7 @@ public class adminresume extends javax.swing.JFrame {
                         
                         }
                         
-                        ligne1("Total", fini, "");
+                        ligne1("Total", Facturepayead.n2.format(fini), "");
 
                     } catch (Exception ex) {
                         ex.printStackTrace();
@@ -619,7 +497,7 @@ public class adminresume extends javax.swing.JFrame {
                             ligne2(mon, com, jTextField1.getText());
 
                         }
-                        String to = "Total:" + fini1;
+                        String to = "Total:" + Facturepayead.n2.format(fini1);
 
                         ligne3(to, "", "");
 
@@ -666,7 +544,7 @@ public class adminresume extends javax.swing.JFrame {
         d1.addRow(line);
     }
 
-    public void ligne1(String lm, double ln, String ll) {
+    public void ligne1(String lm, String ln, String ll) {
 
         Object[] line = {lm, ln, ll};
 
@@ -708,7 +586,7 @@ public class adminresume extends javax.swing.JFrame {
 
             SimpleDateFormat form25 = new SimpleDateFormat("yyyy-MM-dd");
 
-            String totalj = "" + (fini - fini1);
+            String totalj = "" + Facturepayead.n2.format(fini - fini1);
 
             jFormattedTextField1.setText(totalj);
 
@@ -723,120 +601,7 @@ public class adminresume extends javax.swing.JFrame {
     class Details implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-
-            String nom = "";
-
-            //if (jTextField1.getText() == "") {
-                int n = jTable1.getSelectedRow();
-
-                DetailFacture detailFacture = new DetailFacture("Recettes", jTable1, "said", "ndiaye", "payé");
-                /*
-                try {
-                    Class.forName("com.mysql.jdbc.Driver");
-
-                    String url = "jdbc:mysql://localhost:3306/gestion";
-
-                    String user = "root";
-
-                    String pass = "";
-
-                    Connection c1 = DriverManager.getConnection(url, user, pass);
-
-                    System.out.println("Connection bien etablie");
-
-                    Statement a = c1.createStatement();
-
-                    ResultSet b = a.executeQuery("SELECT * FROM facture WHERE identifiant ='" + facId + "'");
-
-                    String date1 = "";
-
-                    String date2 = "";
-
-                    String prenom = "";
-
-                    while (b.next()) {
-
-                        nom = b.getString("Nom");
-
-                        prenom = b.getString("Prenom");
-
-                        date1 = b.getString("Date");
-
-                        date2 = b.getString("datePayer");
-
-                        System.out.print(nom);
-
-                    }
-
-                    if (date2 == null && !nom.equals("")) {
-                        DetailFacture detailFacture = new DetailFacture("Facture", facId, prenom, nom, "payée");
-                    }
-
-                    if (date2 != null && !nom.equals("")) {
-                        DetailFacture detailFacture = new DetailFacture("Facture", facId, prenom, nom, "dette payée");
-                    }
-
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-
-                */
-                // DetailFacture detailFacture = new DetailFacture("Facture",facId, facPrenom, facNom, "payée");
-            /*} else {
-                JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
-            }*/
-
-            /*
-            if (nom.equals("")) {
-                if (jTable1.getSelectedRow() != -1) {
-                    int n = jTable1.getSelectedRow();
-                    Object facId = d1.getValueAt(n, 0);
-                    Object montant = d1.getValueAt(n, 1);
-
-                    try {
-                        Class.forName("com.mysql.jdbc.Driver");
-
-                        String url = "jdbc:mysql://localhost:3306/gestion";
-
-                        String user = "root";
-
-                        String pass = "";
-
-                        Connection c1 = DriverManager.getConnection(url, user, pass);
-
-                        System.out.println("Connection bien etablie");
-
-                        Statement a = c1.createStatement();
-
-                        ResultSet b = a.executeQuery("SELECT * FROM bon WHERE identifiant ='" + facId + "'");
-
-                        String date1 = "";
-
-                        String date2 = "";
-
-                        while (b.next()) {
-
-                            nom = b.getString("Nom");
-
-                            date1 = b.getString("Date");
-
-                            date2 = b.getString("datePayer");
-
-                            System.out.print(nom);
-
-                        }
-
-                        DetailFacture detailFacture = new DetailFacture("Facture", facId, nom, nom, "bon payé");
-
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
-
-                    // DetailFacture detailFacture = new DetailFacture("Facture",facId, facPrenom, facNom, "payée");
-                } else {
-                    JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }*/
+                DetailFacture detailFacture = new DetailFacture("Recettes", jTable1);
         }
     }
 

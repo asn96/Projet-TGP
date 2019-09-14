@@ -236,7 +236,7 @@ public class Facturepayesec extends JFrame {
                 ligne(refp, mon, date, date, nomp, prenomp);
 
             }
-              ligne1("Total", fini, "");
+              ligne1("Total", Facturepayead.n2.format(fini), "");
 
                fini = 0d;
 
@@ -293,7 +293,7 @@ public class Facturepayesec extends JFrame {
         d.addRow(line);
     }
 
-    public void ligne1(String lm, double ln, String ll) {
+    public void ligne1(String lm, String ln, String ll) {
 
         Object[] line = {lm, ln, ll};
 

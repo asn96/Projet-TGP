@@ -231,7 +231,7 @@ public class Facturenonpayead extends JFrame {
                 ligne(refp, mon, dat, nomp, prenomp);
 
             }
-            ligne1("Total", fini, "");
+            ligne1("Total", Facturepayead.n2.format(fini), "");
 
             fini = 0d;
 
@@ -287,7 +287,7 @@ public class Facturenonpayead extends JFrame {
         d.addRow(line);
     }
 
-    public void ligne1(String lm, double ln, String ll) {
+    public void ligne1(String lm, String ln, String ll) {
 
         Object[] line = {lm, ln, ll};
 
@@ -395,7 +395,7 @@ public class Facturenonpayead extends JFrame {
                         ligne(refp, mon, df, nomp, prenomp);
 
                     }
-                    ligne1("Total", fini, "");
+                    ligne1("Total", Facturepayead.n2.format(fini), "");
 
                     fini = 0d;
 
@@ -455,7 +455,7 @@ public class Facturenonpayead extends JFrame {
                         ligne(refp, mon, dat, nomp, prenomp);
 
                     }
-                    ligne1("Total", fini, "");
+                    ligne1("Total", Facturepayead.n2.format(fini), "");
 
                     fini = 0d;
 
@@ -517,7 +517,7 @@ public class Facturenonpayead extends JFrame {
                         ligne(refp, mon, df, nomp, prenomp);
 
                     }
-                    ligne1("Total", fini, "");
+                    ligne1("Total", Facturepayead.n2.format(fini), "");
 
                     fini = 0d;
 
@@ -579,7 +579,7 @@ public class Facturenonpayead extends JFrame {
                         ligne(refp, mon, df, nomp, prenomp);
 
                     }
-                    ligne1("Total", fini, "");
+                    ligne1("Total", Facturepayead.n2.format(fini), "");
 
                     fini = 0d;
 
@@ -600,7 +600,7 @@ public class Facturenonpayead extends JFrame {
             SimpleDateFormat for1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
             String dat2 = for1.format(new Date());
-
+            String datePret="";
             int n = jTable1.getSelectedRow();
 
             Object ob1 = d.getValueAt(n, 0);
@@ -625,9 +625,12 @@ public class Facturenonpayead extends JFrame {
 
                 b.first();
 
+                datePret = b.getString("Date");
+                
                 b.updateInt("Etat", 1);
-
+                    
                 //b.updateString("Date", dat2);
+                
                 b.updateString("datePayer", dat2);
 
                 b.updateRow();
@@ -654,7 +657,7 @@ public class Facturenonpayead extends JFrame {
 
                 Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet b = a.executeQuery("SELECT * FROM ventegar WHERE IDr='" + ob1 + "'");
+                ResultSet b = a.executeQuery("SELECT * FROM ventegar WHERE IDr='" + ob1 + "' AND Date LIKE %'"+datePret+"'%");
 
                 while (b.next()) {
                     b.updateString("Etat", f);
@@ -685,7 +688,7 @@ public class Facturenonpayead extends JFrame {
 
                 Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet b = a.executeQuery("SELECT * FROM ventepieces WHERE Identifiant='" + ob1 + "'");
+                ResultSet b = a.executeQuery("SELECT * FROM ventepieces WHERE Identifiant='" + ob1 + "' AND Date LIKE %'"+datePret+"'%");
 
                 b.first();
 
@@ -717,7 +720,7 @@ public class Facturenonpayead extends JFrame {
 
                 Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet b = a.executeQuery("SELECT * FROM venteau WHERE Identifiant='" + ob1 + "'");
+                ResultSet b = a.executeQuery("SELECT * FROM venteau WHERE Identifiant='" + ob1 + "' AND Date LIKE %'"+datePret+"'%");
 
                 b.first();
 
@@ -773,50 +776,7 @@ public class Facturenonpayead extends JFrame {
             }else{
                 JOptionPane.showMessageDialog(null, " Veuillez Sélectionner une ligne D'abord !", " Attention !", JOptionPane.INFORMATION_MESSAGE);
             }
-                        /*
-            /*
-            
-            
-            *
-             int ROWS = 3;
-             Object[][] data = { { "A", "B", "Snowboarding", new Integer(5) },
-        { "C", "D", "Pool", new Integer(10) } };
-    Object[] columnNames = { "firstname", "lastname", "age" };
-    final JTable table = new JTable(data, columnNames) {
-      @Override
-      public Dimension getPreferredScrollableViewportSize() {
-        Dimension d = getPreferredSize();
-        int n = getRowHeight();
-        return new Dimension(d.width, (n * ROWS));
-      }
-    };
-    
-    final JTable table1 = new JTable(data, columnNames) {
-      @Override
-      public Dimension getPreferredScrollableViewportSize() {
-        Dimension d = getPreferredSize();
-        int n = getRowHeight();
-        return new Dimension(d.width, (n * ROWS));
-      }
-    };
-           JPanel jPanel = new JPanel();
-           jPanel.setLayout(new GridLayout());
-           JScrollPane sp = new JScrollPane(table);
-           JScrollPane sp1 = new JScrollPane(table1);
-           jPanel.add(sp);
-           jPanel.add(sp1);
-           JDialog jdialog = new JDialog();
-            jdialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            jdialog.setContentPane(jPanel);
-
-            jdialog.pack();
-            jdialog.setVisible(true);
-           
-                    
-                    /*JOptionPane jOptionPane = new JOptionPane();
-            jOptionPane.showInputDialog("je suis là");
-            /
-        */            
+                       
         }
         
     }
