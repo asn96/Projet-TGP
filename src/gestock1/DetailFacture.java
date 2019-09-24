@@ -364,7 +364,8 @@ public class DetailFacture extends JFrame {
                             
                             }
                             else{
-                                if(datePayer.contains(date)){
+                                //System.out.println("Date :"+date+" Datepayer :"+datePret);
+                                if(datePret.contains(date)){
                                     totalpret += pt;
                                     lignePret(identifiant, designation, reference, pu, qte, pt, datePret);
                             
