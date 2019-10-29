@@ -165,7 +165,7 @@ public class solde extends JFrame{
                
                com=b.getString("Date");
               
-               ligne(mon, com);
+               ligne(Facturepayead.n2.format(mon), com);
                
       }
              
@@ -217,7 +217,7 @@ public class solde extends JFrame{
    
 
     }
-   public void ligne(double a, String b){
+   public void ligne(String a, String b){
         
                   Object[] line ={a, b};
                   

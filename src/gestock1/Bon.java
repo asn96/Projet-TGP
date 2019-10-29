@@ -990,7 +990,7 @@ public class Bon extends JFrame{
                 
                 a.setInt(8, 0);
                 
-                a.setString(9, "");
+                a.setString(9, null);
                 
                 a.executeUpdate();
                 

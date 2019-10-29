@@ -182,62 +182,10 @@ public class Facturepayesec extends JFrame {
                 datePayer = b.getString("datePayer");
 
                 fini = fini + mon;
-
                 ligne(refp, mon, datePret, datePayer, nomp, prenomp);
 
             }
-          
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        
-         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            String url = "jdbc:mysql://localhost:3306/gestion";
-
-            String user = "root";
-
-            String pass = "";
-
-            Connection c1 = DriverManager.getConnection(url, user, pass);
-
-            System.out.println("Connection bien etablie");
-
-            Statement a = c1.createStatement();
-
-            ResultSet b = a.executeQuery("SELECT * FROM facture  WHERE ( YEAR(Date)='" + datfr1 + "' AND MONTH(Date)='" + datfr2 + "' AND DAYOFMONTH(Date)='" + datfr3 + "' AND Etat='" + 1 + "') ORDER BY Date DESC");
-
-            int refp;
-
-            double mon;
-
-            String nomp;
-
-            String prenomp;
-
-            String date;
-
-            while (b.next()) {
-
-                refp = b.getInt("Identifiant");
-
-                mon = b.getDouble("Montant");
-
-                nomp = b.getString("Nom");
-
-                prenomp = b.getString("Prenom");
-
-                date = b.getString("Date");
-
-                fini = fini + mon;
-
-                ligne(refp, mon, date, date, nomp, prenomp);
-
-            }
-              ligne1("Total", Facturepayead.n2.format(fini), "");
-
+           ligne1("Total", Facturepayead.n2.format(fini), "");
                fini = 0d;
 
         } catch (Exception ex) {
@@ -287,9 +235,7 @@ public class Facturepayesec extends JFrame {
     }
 
     public void ligne(int a, double b, String c, String datePayer, String nom, String prenom) {
-
         Object[] line = {a, b, c, datePayer, nom, prenom};
-
         d.addRow(line);
     }
 

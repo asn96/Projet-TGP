@@ -229,7 +229,7 @@ public class adminresume extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Total");
+        jButton1.setText("Solde");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -311,19 +311,20 @@ public class adminresume extends javax.swing.JFrame {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(98, 98, 98))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 114, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(98, 98, 98))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,7 +435,7 @@ public class adminresume extends javax.swing.JFrame {
                             "bon"
                         };
                         for (String type : types) {
-                         ResultSet b = a.executeQuery("SELECT * FROM "+type+" WHERE ( ( Date LIKE '" + jTextField1.getText() + "%" + "') OR ( datePayer LIKE '"+jTextField1.getText()+"%"+"') ) AND Etat='" + 1 + "'");
+                         ResultSet b = a.executeQuery("SELECT * FROM "+type+" WHERE ( ( Date LIKE '" + jTextField1.getText() + "%" + " AND datePayer=null') OR ( datePayer LIKE '"+jTextField1.getText()+"%"+"') ) AND Etat='" + 1 + "'");
 
                         int bonn1;
 
@@ -585,14 +586,105 @@ public class adminresume extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent e) {
 
             SimpleDateFormat form25 = new SimpleDateFormat("yyyy-MM-dd");
+            
+            //
+            String dat2 = form25.format(new Date());
 
-            String totalj = "" + Facturepayead.n2.format(fini - fini1);
+            int ids = 0;
+            if(!Authentification.userRole.equals("Administrateur")){
+             
+            try {
 
+                Class.forName("com.mysql.jdbc.Driver");
+
+                String url = "jdbc:mysql://localhost:3306/gestion";
+
+                String user = "root";
+
+                String pass = "";
+
+                Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                System.out.println("Connection bien etablie");
+
+                Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+                ResultSet b = a.executeQuery("SELECT * FROM solde WHERE Date='" + dat2 + "'");
+
+                b.first();
+
+                ids = b.getInt("Identifiant");
+
+            } catch (Exception ex) {
+
+            }
+            if (ids != 0) {
+
+                try {
+
+                    Class.forName("com.mysql.jdbc.Driver");
+
+                    String url = "jdbc:mysql://localhost:3306/gestion";
+
+                    String user = "root";
+
+                    String pass = "";
+
+                    Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                    System.out.println("Connection bien etablie");
+
+                    Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+                    ResultSet b = a.executeQuery("SELECT * FROM solde WHERE Date='" + dat2 + "'");
+
+                    b.first();
+
+                    b.updateDouble("Montant", (fini - fini1));
+
+                    b.updateRow();
+
+                    JOptionPane.showMessageDialog(null, "Le solde de la journée est enregistré", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
+
+                } catch (Exception ex) {
+
+                }
+            } else {
+
+                try {
+
+                    Class.forName("com.mysql.jdbc.Driver");
+
+                    String url = "jdbc:mysql://localhost:3306/gestion";
+
+                    String user = "root";
+
+                    String pass = "";
+
+                    Connection c1 = DriverManager.getConnection(url, user, pass);
+
+                    System.out.println("Connection bien etablie");
+
+                    Statement a = c1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+                    a.executeUpdate("INSERT INTO solde(Montant, Date) VALUES('" + (fini - fini1) + "', '" + dat2 + "')");
+
+                    JOptionPane.showMessageDialog(null, "Le solde de la journée est enregistré", "GESTOCK", JOptionPane.INFORMATION_MESSAGE);
+
+                } catch (Exception ex) {
+
+                }
+
+            }   
+            }
+
+            String totalj = Facturepayead.n2.format(fini - fini1);
             jFormattedTextField1.setText(totalj);
 
             fini = 0;
-
             fini1 = 0;
+
+            //
 
             jButton1.setEnabled(false);
         }

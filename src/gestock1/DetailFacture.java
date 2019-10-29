@@ -475,7 +475,7 @@ public class DetailFacture extends JFrame {
     }
 
     class Imprimer implements ActionListener {
-
+    
         public void actionPerformed(ActionEvent e) {
             MessageFormat hed = new MessageFormat(libelle + " " + etafacture + " de " + facPrenom + " " + facNom);
             MessageFormat hed1 = new MessageFormat("Page{0, number, integer}");
@@ -487,7 +487,7 @@ public class DetailFacture extends JFrame {
         }
     }
     class ImprimerRecette implements ActionListener {
-
+        
         public void actionPerformed(ActionEvent e) {
             MessageFormat hed1 = new MessageFormat(libelle + " Ventes ");
             MessageFormat footer1 = new MessageFormat("Page{0, number, integer}");
