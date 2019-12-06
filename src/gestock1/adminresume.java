@@ -435,7 +435,7 @@ public class adminresume extends javax.swing.JFrame {
                             "bon"
                         };
                         for (String type : types) {
-                         ResultSet b = a.executeQuery("SELECT * FROM "+type+" WHERE ( ( Date LIKE '" + jTextField1.getText() + "%" + " AND datePayer=null') OR ( datePayer LIKE '"+jTextField1.getText()+"%"+"') ) AND Etat='" + 1 + "'");
+                         ResultSet b = a.executeQuery("SELECT * FROM "+type+" WHERE ( ( Date LIKE '" + jTextField1.getText() + "%" + "' AND datePayer IS NULL ) OR ( datePayer LIKE '"+jTextField1.getText()+"%"+"') ) AND Etat='" + 1 + "'");
 
                         int bonn1;
 
