@@ -8,7 +8,6 @@ package gestock1;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.print.PrinterException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,8 +21,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -68,8 +65,7 @@ public class vente extends JFrame{
 
 
 
-    public vente(){
-        
+    public vente(){       
         initComponents();
    
     }
@@ -634,7 +630,7 @@ public class vente extends JFrame{
                 
 
                 a.setInt(1, 0);
-                
+               
                 a.setString(2, jTextField1.getText());
                 
                 a.setInt(3, code1);
